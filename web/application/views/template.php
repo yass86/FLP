@@ -27,7 +27,7 @@
     <div id="cuerpo">
         <div id="cabecera">
             <div id="logo"></div>
-            <div id="texto_cabeza"><p>SISTEMA WEB<br/>PARA LA ADMINISTRACIÓN<br/>DE LOS LICEOS DEL EJERCITO</p></div>
+            <div id="texto_cabeza"><p>marcela no funciona<br/>PARA LA ADMINISTRACIÓN<br/>DE LOS LICEOS DEL EJERCITO</p></div>
         </div>
         <div id="modulos"><?php echo $menu;?></div>
         <div id="centro">
