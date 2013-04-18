@@ -23,18 +23,7 @@
 <script type="text/javascript" src="<?php echo site_url('js/jquery.datePicker.js');?>"></script>
 </head>
 <body>
-    <div id="url" lang="<?echo site_url();?>"></div>
-    <div id="cuerpo">
-        <div id="cabecera">
-            <div id="logo"></div>
-            <div id="texto_cabeza"><p>marcela no funciona<br/>PARA LA ADMINISTRACIÓN<br/>DE LOS LICEOS DEL EJERCITO</p></div>
-        </div>
-        <div id="modulos"><?php echo $menu;?></div>
-        <div id="centro">
-                <div id="contenido"></div>
-        </div>
-        <div id="pie"><p>DESARROLLADO POR:<br/>Advantage Microsystems Colombia Ltda<br/>Bogotá-Colombia</p></div>
-    </div>
+    <h2>Hola marce</h2>
   
 </body>
 <script type="text/javascript">

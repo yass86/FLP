@@ -2,7 +2,7 @@
 class Inicio extends CI_Controller {
 	public function index()
 	{
-            $sesion = array();
+           /* $sesion = array();
             $sesion["IDInstitute"]=1;
             $sesion["anolectivo"]=2012;
             $sesion["amc"]="ADVANTAGE MICROSYSTEMS";
@@ -10,7 +10,9 @@ class Inicio extends CI_Controller {
             $dat["lista"]=  $this->getMenusTop();
             $cont["menu"] = $this->load->view("menu",$dat,true);
                     echo $this->load->view('template',$cont,true);
-           
+           */
+            echo $this->load->view('template',null,true);
+                    
 	}
         function precarga()
         {
