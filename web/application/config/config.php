@@ -14,10 +14,9 @@
 | path to your installation.
 |
 */
-//$config['base_url']	= 'http://mrpc.artifexcomunicacion.com/';
-//$config['base_url']	= 'http://agx.no-ip.biz:93/mrpc/';
-$config['base_url']	= 'http://190.84.135.49:91/celic/';
-//$config['base_url']	= 'http://alamedida.co/mrpc/';
+
+$config['base_url']	= 'http://flp.aguayoapps.com/';
+
 /*
 |--------------------------------------------------------------------------
 | Index File
