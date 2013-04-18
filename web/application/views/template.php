@@ -23,7 +23,9 @@
 <script type="text/javascript" src="<?php echo site_url('js/jquery.datePicker.js');?>"></script>
 </head>
 <body>
-    <h2>Hola marce</h2>
+    <div>
+        <h2>Hola Marce</h2>
+    </div>
   
 </body>
 
