@@ -1,0 +1,11 @@
+[24-Jan-2012 15:58:45] PHP Fatal error:  Class 'Controller' not found in /home/artifexc/public_html/mrpc/application/controllers/login.php on line 3
+[24-Jan-2012 15:59:27] PHP Fatal error:  Class 'Controller' not found in /home/artifexc/public_html/mrpc/application/controllers/login.php on line 3
+[24-Jan-2012 16:00:19] PHP Fatal error:  Class 'Controller' not found in /home/artifexc/public_html/mrpc/application/controllers/login.php on line 3
+[24-Jan-2012 16:06:28] PHP Fatal error:  Class 'Model' not found in /home/artifexc/public_html/mrpc/application/models/login/login_model.php on line 2
+[24-Jan-2012 16:07:01] PHP Fatal error:  Call to undefined method CI_Model::model() in /home/artifexc/public_html/mrpc/application/models/login/login_model.php on line 6
+[24-Jan-2012 16:07:35] PHP Fatal error:  Class 'Model' not found in /home/artifexc/public_html/mrpc/application/models/login/login_model.php on line 2
+[24-Jan-2012 16:09:05] PHP Fatal error:  Call to undefined method CI_Model::_construct() in /home/artifexc/public_html/mrpc/application/models/login/login_model.php on line 6
+[24-Jan-2012 16:09:34] PHP Fatal error:  Call to a member function query() on a non-object in /home/artifexc/public_html/mrpc/application/models/login/login_model.php on line 11
+[31-Jan-2012 15:50:09] PHP Fatal error:  Cannot use object of type CI_DB_mysql_result as array in /home/artifexc/public_html/mrpc/application/controllers/usuario.php on line 48
+[01-Feb-2012 16:42:57] PHP Fatal error:  Function name must be a string in /home/artifexc/public_html/mrpc/application/models/contable/contable_model.php on line 12
+[03-Feb-2012 17:15:47] PHP Fatal error:  Call to a member function getReporteCaja() on a non-object in /home/artifexc/public_html/mrpc/application/controllers/inicio.php on line 89
