@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title> .::Celic::.</title>
+<title> .::FLP::.</title>
 <meta name="Author" content="alamedida.co" />
 <link rel="stylesheet" type="text/css" media="screen" href="<?php echo site_url('estilo/menu.css');?>" />
 <link rel="stylesheet" type="text/css" media="screen" href="<?php echo site_url('estilo/estilo.css');?>" />
