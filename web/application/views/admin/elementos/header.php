@@ -6,8 +6,7 @@
                   <div class="content">
                     <a>FLP</a>
                   </div> <!-- /.content -->
-                </div><!-- /.block -->
-               
+                </div><!-- /.block -->               
               </div> <!-- /.section-inner-->
           </div> <!--/.section --> 
         </div> <!-- /.section-wrapper-->
