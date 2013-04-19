@@ -1,0 +1,133 @@
+
+#block-logo{
+    float: left;
+    margin-left: -150px;
+    position: relative;
+}
+#preface-first .section{
+    background: url("../images/top-back.jpg") no-repeat center 0 transparent;
+}
+#main .section{
+    background: url("../images/center-back.jpg") repeat-y center 0 transparent;
+}
+
+#block-user-menu .content ul  {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#block-user-menu .content ul  li {
+margin: 0 2px;
+display: inline-block;
+}
+#block-user-menu .content ul  li  a {
+    color:#FFF;
+    padding:6px 33px 5px 15px;
+    display:block;
+    text-decoration:none;
+}
+#block-user-menu .content ul  li  a:active{
+    color:#b29762;
+}
+#block-user-menu .content ul  li#user-login a {
+    background:url(../images/btns_login.png) no-repeat 0px 0px;
+}
+#block-user-menu .content ul  li#user-login a:hover{
+    background:url(../images/btns_login.png) no-repeat 0px -29px;    
+}
+#block-user-menu .content ul  li#user-login a:active{
+    background:url(../images/btns_login.png) no-repeat 0px -58px;
+    color:#b29762;
+}
+#block-user-menu .content ul  li#menu-logout a{
+    background:url(../images/btns_login.png) no-repeat -130px 0px;
+}
+#block-user-menu .content ul  li#menu-logout a:hover{
+    background:url(../images/btns_login.png) no-repeat -130px -29px;
+}
+#block-user-menu .content ul  li#menu-logout a:active{
+    background:url(../images/btns_login.png) no-repeat -130px -58px;
+}
+#block-user-menu .content ul  li#menu-register a{
+    background:url(../images/btns_login.png) no-repeat -259px 0px;
+}
+#block-user-menu .content ul  li#menu-register a:hover{
+    background:url(../images/btns_login.png) no-repeat -259px -29px;
+}
+#block-user-menu .content ul  li#menu-register a:active{
+    background:url(../images/btns_login.png) no-repeat -259px -58px;
+}
+#block-user-menu .content ul  li#menu-mail a{
+background: url(../images/btns_login.png) no-repeat -358px 0px;
+font-size: 0;
+padding: 18px 18px 8px 20px;
+}
+#block-user-menu .content ul  li#menu-mail a:hover{
+    background:url(../images/btns_login.png) no-repeat -358px -29px;
+}
+#block-user-menu .content ul  li#menu-mail a:active{
+    background:url(../images/btns_login.png) no-repeat -358px -58px;
+}
+#block-user-menu .content ul  li#menu-account a {
+background: url(../images/btns_login.png) no-repeat -398px 0px;
+padding: 6px 23px 5px 15px;
+}
+#block-user-menu .content ul  li#menu-account a:hover{
+    background:url(../images/btns_login.png) no-repeat -398px -29px;
+}
+#block-user-menu .content ul  li#menu-account a.active{
+    background:url(../images/btns_login.png) no-repeat -398px -58px;
+}
+ #block-buscar {
+float: right;
+clear: right;
+margin: 13px 56px 0 0;
+}
+#searchform input[type="submit"] {
+background: url(../images/ico-buscador.png) no-repeat 0 0;
+font-size: 0;
+border: 0;
+width: 22px;
+height: 24px;
+margin-right: 5px;
+cursor: pointer;
+}
+#searchform  input[type="text"] {
+border: 0;
+color: #871f0c;
+margin: 0;
+font-size: 12px;
+padding: 7px 0 5px 10px;
+float: left;
+background: transparent;
+}
+#searchform {
+    background: #FFF;
+border-radius: 5px;
+border: #871f0c 1px solid;
+}
+.block-breadcrumbs  {
+float: left;
+padding: 20px 0 12px 70px;
+}
+#block-user-menu {
+text-align: right;
+padding: 5px 55px 0 0;
+}
+.block-breadcrumbs span {
+    padding: 10px 0px 0px 5px;
+color: #ffdd00;
+}
+.block-breadcrumbs a {
+    color: #fff;
+    font-size: 16px;
+}
+.block-breadcrumbs a:hover{
+text-decoration: underline;
+color: #b29762;
+}
+.tabs ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}

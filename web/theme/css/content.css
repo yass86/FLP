@@ -1,0 +1,138 @@
+﻿#main #content {
+padding: 20px 80px;
+}
+.link-tabs, .info-percentages {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.link-tabs li  {
+display: inline-block;
+}
+.link-tabs li a{
+color: #FFFFFF;
+padding: 15px 30px;
+border-radius: 5px;
+background-color: rgba(178, 151, 98, 0.7);
+display: block;
+font-size: 15px;
+}
+.link-tabs li a:hover, .link-tabs li a.active  {
+background-color: rgba(157, 47, 33, 0.7);
+text-decoration: none;
+}
+
+/***** my account***/
+
+.inner-left {
+    float: left;
+}
+.inner-right  {
+	float: right;
+}
+.img-my-account {
+    margin-right: 30px;
+}
+#my-account {
+width: 80%;
+margin: 30px auto;
+overflow: hidden;
+}
+.columnx3 {
+    text-align: center;
+}
+.columnx3 .col {
+width: 28%;
+display: inline-block;
+margin: 2%;
+}
+.recipes h2 {
+border-bottom: 1px solid #EE8E00;
+padding-bottom: 5px;
+font-weight: 700;
+width: 93%;
+margin: 20px auto;
+}
+.columnx3 .col h3 {
+margin-bottom: 6px;
+text-align: left;
+font-weight: 700;
+}
+.btn-recipe {
+	margin: 2px 0 0 10px;
+}
+.btn-recipe a {
+	display: block;
+	font-size: 0;
+	width: 22px;
+	height: 22px;
+}
+.btn-recipe a.recipe-unpublished {
+	background: url("../images/ico-check-not-ok.png") no-repeat center 0 transparent;
+}
+.btn-recipe a.recipe-published {
+	background: url("../images/ico-check-ok.png") no-repeat center 0 transparent;
+}
+.info-percentages{
+background: rgba(178, 151, 98, 0.3);
+border-radius: 2px;
+margin: 15px 0;
+text-align: left;
+overflow: hidden;
+list-style: none;
+
+}
+.info-percentages li  {
+border-right: 1px solid #fff;
+padding: 5px 20px 5px 20px;
+float: left;
+margin: 2px;
+}
+.info-percentages li a {
+color: rgba(7,1,1,1);
+font-weight: 700;
+font-size: 14px;
+float: left;
+line-height: 35px;
+margin-right: 3px;
+}
+.info-percentages li.last{
+	border: 0;
+}
+.info-percentages li span {
+color: rgba(173,27,35,1);
+font-size: 30px;
+float: right;
+font-weight: 400;
+}
+#my-account h2{
+font-size: 18px;
+font-weight: 700;
+margin-bottom: 5px;
+}
+#my-account h1 {
+font-family: 'Lato', sans-serif;
+font-style: normal;
+color: #9f3223;
+font-size: 30px;
+margin-bottom: 4px;
+}
+#user-buttons .btn-red{
+	float: left;
+
+}
+.btn-red input[type="submit"], .btn-red input[type="submit"]:hover   {
+background-position: 10px center;
+float: left;
+}
+.btn-red.btn-order-submit  input[type="submit"]{
+background-image: url("../images/btn-order-reicpe-.png");
+padding: 8px 10px 8px 40px;
+}
+.btn-red.publish-recipes-submit  input[type="submit"]{
+background-image: url("../images/btn-publish-recipe.png");
+padding: 8px 10px 8px 30px;
+}
+#user-buttons .btn-red.update-info-submit {
+	margin: 0 10px;
+}

@@ -1,33 +1,29 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml2/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title> .::Admin - FLP::.</title>
-<meta name="Author" content="alamedida.co" />
-
-<link rel="stylesheet" type="text/css" media="screen" href="<?php echo site_url('estilo/estilo.css');?>" />
-<link rel="stylesheet" type="text/css" media="screen" href="<?php echo site_url('estilo/jquery.autocomplete.css');?>" />
-<link rel="stylesheet" type="text/css" media="screen" href="<?php echo site_url('estilo/datePicker.css');?>" />
-<script src="<?php echo site_url('js/stuHover.js');?>" type="text/javascript"></script>
-<script type="text/javascript" src="<?php echo site_url('js/jquery-1.6.2.min.js');?>"></script>
-<script type="text/javascript" src="<?php echo site_url('js/jquery.PrintArea.js');?>"></script>
-<script type="text/javascript" src="<?php echo site_url('js/jquery.validate.js');?>"></script>
-<script type="text/javascript" src="<?php echo site_url('js/jquery.autocomplete.js');?>"></script>
-<script type="text/javascript" src="<?php echo site_url('js/jquery.autocomplete.min.js');?>"></script>
-<script type="text/javascript" src="<?php echo site_url('js/jquery.autocomplete.min.js');?>"></script>
-<script type="text/javascript" src="<?php echo site_url('js/jquery.autocomplete.pack.js');?>"></script>
-<script type="text/javascript" src="<?php echo site_url('js/date.js');?>"></script>
-<script type="text/javascript" src="<?php echo site_url('js/utiles.js');?>"></script>
-<script type="text/javascript" src="<?php echo site_url('js/validacion.js');?>"></script>
-<script type="text/javascript" src="<?php echo site_url('js/jquery.datePicker.js');?>"></script>
-</head>
-<body>
-    <div id="contenedor">
-        <div id="menu"></div>
-        <div id="contenido"></div>
-        <div id="pie"></div>
-    </div>
-  
-</body>
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/> 
+    <title>FLP</title>
+    <link type="text/css" rel="stylesheet" href="<?php echo site_url('theme/css/content.css')?>" media="all" />
+    <link type="text/css" rel="stylesheet" href="<?php echo site_url('theme/css/footer.css')?>" media="all" />
+    <link type="text/css" rel="stylesheet" href="<?php echo site_url('theme/css/header.css')?>" media="all" />
+    <link type="text/css" rel="stylesheet" href="<?php echo site_url('theme/css/html.css')?>" media="all" />
+    <link type="text/css" rel="stylesheet" href="<?php echo site_url('theme/css/js.css')?>" media="all" />
+    <link type="text/css" rel="stylesheet" href="<?php echo site_url('theme/css/layout.css')?>" media="all" />
+    <link type="text/css" rel="stylesheet" href="<?php echo site_url('theme/css/menu.css')?>" media="all" />
+    <link type="text/css" rel="stylesheet" href="<?php echo site_url('theme/css/normalize.css.css')?>" media="all" />
+    <script type="text/javascript" src="<?php echo site_url('theme/js/html5shiv-printshiv.js')?>"></script>
+    <script type="text/javascript" src="<?php echo site_url('theme/js/jquery-1.7.2.min.js')?>"></script>
+    <script type="text/javascript" src="<?php echo site_url('theme/js/css3-mediaqueries.js')?>"></script>
+    <script type="text/javascript" src="<?php echo site_url('theme/js/jquery.cycle.lite.js')?>"></script>
+    <script type="text/javascript" src="<?php echo site_url('theme/js/jquery.tinycarousel.min.js')?>"></script>
+    <script type="text/javascript" src="<?php echo site_url('theme/js/custom.js')?>"></script>
+  </head>
+  <body class="front no-sidebars">
+      <div id="page">
+      <?php echo $header; ?>
+      <?php echo $preface; ?>
+      <?php echo $main; ?>
+      <?php echo $footer; ?> 
+     </div><!--/.page -->  
+  </body>
 </html>

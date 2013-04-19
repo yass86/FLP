@@ -14,9 +14,7 @@
 | path to your installation.
 |
 */
-
 $config['base_url']	= 'http://flp.aguayoapps.com/';
-
 /*
 |--------------------------------------------------------------------------
 | Index File
