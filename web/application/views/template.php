@@ -24,7 +24,7 @@
 </head>
 <body>
     <div>
-        <h2>Hola Marce</h2>
+        <h2>Hola Marce ya se como configurar git jejeje</h2>
     </div>
     <div>
         
