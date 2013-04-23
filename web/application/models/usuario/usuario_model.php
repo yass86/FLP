@@ -13,10 +13,8 @@ class usuario_model extends CI_Model
             $sql = "INSERT INTO usuario (nombre,mail,pass,tipo)
                 VALUES 
                 (?,?,?,?)";
-            //$this->db->query->($sql);
+             $this->db->query($sql,$var);
         }
-    }
-  
-   
+    }  
 }
 ?>
