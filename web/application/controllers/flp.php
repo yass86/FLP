@@ -2,7 +2,12 @@
 class Flp extends CI_Controller {
 	public function index()
 	{          
-            echo $this->load->view('admin/administrador',null,true);                    
+            $cont['header']=  $this->load->view('front/header',null,true);
+            $cont['preface']=  $this->load->view('front/preface',null,true);
+            $cont['main']=  $this->load->view('front/main',null,true);
+            $cont['footer']=  $this->load->view('front/footer',null,true);
+            
+            echo $this->load->view('template',$cont,true);                    
 	}
         function precarga()
         {
