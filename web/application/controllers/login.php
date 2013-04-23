@@ -2,22 +2,27 @@
 class Login extends CI_Controller
 {
     public function index()
-    {
-     echo $this->load->view("login/registro",null,true);
+    {             
+              $menu['menu']=  "";             
+              $cont['header']= "";
+              $cont['preface']= "";
+              $cont['main']=  $this->load->view('admin/usuario/login',null,true);
+              $cont['footer']= "";
+              echo $this->load->view('admin/administrador',$cont,true);   
     }
     function Validar()
     {
        $us = $this->input->post('mail', true);
-       $pw = $this->input->post('pass', true);
+       $pw = $this->input->post('pwd', true);
        $this->load->model('login/login_model','valido');
        $isUser = $this->valido->validarUsuario($us,$pw);
       if($isUser == "true"){
           $this->iniciarSesion($us);
-           redirect('inicio');
+          redirect('admin');
       }
       else{
             $this->session->sess_destroy();//destruir session
-           redirect('login/error');
+           redirect('admin/usuario/error');
       }
     }
     function iniciarSesion($us)
@@ -26,12 +31,9 @@ class Login extends CI_Controller
        $isUser = $this->valido->getDatosUsuario($us); 
         $usuario = Array();
        foreach ($isUser as $value) {
-            $usuario['id']=$value->id_usuario;
-            $usuario['cc']=$value->cedula;
-            $usuario['nombre']=$value->nombre." ".$value->apellido;
-            $usuario['tipo']=$value->tipo;
-            $usuario['caja_principal']="52927462";
-            $usuario['caja_principal_id']="9";
+            $usuario['id']=$value->id_usuario;           
+            $usuario['nombre']=$value->nombre;
+            $usuario['tipo']=$value->tipo;            
        }
        $this->session->set_userdata($usuario);
     }

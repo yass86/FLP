@@ -2,27 +2,49 @@
 class Admin extends CI_Controller {
 	public function index()
 	{
-                $lista['lista'] = $this->valoresMenu();
-              $menu['menu']=  $this->load->view('admin/elementos/menu',$lista,true);
-              $menu['otro']=  "otra cosas";
-              
+            if($this->session->userdata('id')!=null)
+            {             
+              $lista['pf'] = $this->session->userdata('id');
+              $menu['mensaje']=  $this->session->userdata('nombre'); 
+              $menu['contenido']=  $this->session->userdata('nombre'); 
+              $menu['menu']=  $this->cargarMenu(); 
               $cont['header']=  $this->load->view('admin/elementos/header',$menu,true);
-              $cont['preface']=  $this->load->view('admin/elementos/preface',null,true);
+              $cont['preface']=  $this->load->view('admin/elementos/preface',$lista,true);
               $cont['main']=  $this->load->view('admin/elementos/main',null,true);
               $cont['footer']=  $this->load->view('admin/elementos/footer',null,true);
-              echo $this->load->view('admin/administrador',$cont,true);                    
+              echo $this->load->view('admin/administrador',$cont,true);                   
+            }
+            else
+            {
+                redirect();
+            }
 	}
-        function precarga()
+        //cargar menu administrador 
+        function cargarMenu()
         {
-            echo $this->load->view("preload",null,true);
+            $this->load->model('admin/admin_model','modelo');
+            $lista['lista'] = $this->modelo->getMenu();
+            echo $this->load->view('admin/elementos/menu',$lista,true);  
         }
-        function valoresMenu()
+        
+        //parcelador de menus 
+        function  ir($var="")
         {
-            $var[0]="usuario";
-            $var[1]="productos";
-            $var[2]="servicios";
-            $var[3]="flp";
-            
-            return $var;
+            if($this->session->userdata('id')!=null)
+            { 
+                if($var=="new_user")
+                {
+                    
+                }               
+                else
+                {
+                    
+                }
+            }
+            else
+            {
+                redirect();
+            }
         }
+               
 } 

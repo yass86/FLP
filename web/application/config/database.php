@@ -55,10 +55,10 @@ $db['default']['database'] = 'artifexc_mrpc';*/
 
 
 
-$db['default']['hostname'] = '';
-$db['default']['username'] = '';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'root';
 $db['default']['password'] = '';
-$db['default']['database'] = '';
+$db['default']['database'] = 'flp';
 
 
 $db['default']['dbdriver'] = 'mysql';

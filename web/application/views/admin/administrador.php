@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8"/> 
-    <title>FLP</title>
+    <title><?php echo $mensaje;?></title>
     <link type="text/css" rel="stylesheet" href="<?php echo site_url('theme/css/content.css')?>" media="all" />
     <link type="text/css" rel="stylesheet" href="<?php echo site_url('theme/css/footer.css')?>" media="all" />
     <link type="text/css" rel="stylesheet" href="<?php echo site_url('theme/css/header.css')?>" media="all" />

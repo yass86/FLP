@@ -3,7 +3,7 @@
             <div class="section">
               <div class="section-inner clearfix">
                 <section id="content">
-                    <?php echo $contenido;?>
+                    <h2>ERROR EN INICIO DE SESIÓN</h2>                    
                 </section><!-- /.content-->
               </div> <!-- /.section-inner-->
             </div> <!--/.section --> 
