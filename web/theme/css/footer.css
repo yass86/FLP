@@ -1,7 +1,4 @@
 /*GENERALIDADES FOOTER*/
-#footer .section-wrapper, html{
-    background: #A41B1B;
-}
 #footer  li {
   margin-bottom: 2px;
 }
@@ -49,29 +46,6 @@ float: left;
   color: #FFF;
 }
 
-#block-info-site{
-float: right;
-width: 24%;
-text-align: center;
-color: #F3E05E;
-font-size: 13px;
-line-height: 1;
-position: relative;
-top: -32px;
-}
-.link-register a {
-  background: url("../images/link-registro-footer.png") no-repeat 0 0 transparent;
-  font-size: 0;
-width: 220px;
-height: 40px;
-display: block;
-
-}
 #footer .section-inner {
   padding: 25px 20px;
-}
-.info-site {
-margin-top: 10px;
-float: left;
-width: 100%;
 }
