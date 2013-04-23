@@ -21,7 +21,7 @@ class admin_model extends CI_Model
         $resultado = null;
         if($tipo!="")
         {
-            $sql="SELECT * FROM menu where tipo = '$tipo' order by orden desc";        
+            $sql="SELECT * FROM menu where tipo = '$tipo' order by orden asc";        
             $resultado = $this->db->query($sql)->result();
         }
         return $resultado;

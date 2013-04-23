@@ -3,7 +3,8 @@ class Login extends CI_Controller
 {
     public function index()
     {             
-              $menu['menu']=  "";             
+              $menu['menu']=  ""; 
+              $menu['mensaje']=  "LOGIN FLP"; 
               $cont['header']= "";
               $cont['preface']= "";
               $cont['main']=  $this->load->view('admin/usuario/login',null,true);
@@ -22,7 +23,8 @@ class Login extends CI_Controller
       }
       else{
             $this->session->sess_destroy();//destruir session
-           redirect('admin/usuario/error');
+           redirect('login/error');
+            
       }
     }
     function iniciarSesion($us)
@@ -44,6 +46,14 @@ class Login extends CI_Controller
     }
     function error()
     {
-       echo $this->load->view('login/error',null,true);
+        
+              $menu['mensaje']= ""; 
+              $menu['contenido']=  "ERROR INICIANDO SESION";  
+              $menu['menu']=  ""; 
+              $cont['header']= "";
+              $cont['preface']= "";
+              $cont['main']=  $this->load->view('admin/elementos/main',$menu,true);
+              $cont['footer']= "";            
+         echo $this->load->view('admin/administrador',$cont,true);                   
     }
 }

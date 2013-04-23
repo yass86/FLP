@@ -4,10 +4,11 @@ class Admin extends CI_Controller {
 	{
             if($this->session->userdata('id')!=null)
             {             
-              $lista['pf'] = $this->session->userdata('id');
+              $lista['pf'] = "";
               $menu['mensaje']=  $this->session->userdata('nombre'); 
               $menu['contenido']=  $this->session->userdata('nombre'); 
               $menu['menu']=  $this->cargarMenu(); 
+              $menu['usr']=  $this->load->view('admin/elementos/user',$menu,true);
               $cont['header']=  $this->load->view('admin/elementos/header',$menu,true);
               $cont['preface']=  $this->load->view('admin/elementos/preface',$lista,true);
               $cont['main']=  $this->load->view('admin/elementos/main',null,true);
@@ -24,7 +25,7 @@ class Admin extends CI_Controller {
         {
             $this->load->model('admin/admin_model','modelo');
             $lista['lista'] = $this->modelo->getMenu();
-            echo $this->load->view('admin/elementos/menu',$lista,true);  
+            return $this->load->view('admin/elementos/menu',$lista,true);  
         }
         
         //parcelador de menus 
@@ -32,9 +33,23 @@ class Admin extends CI_Controller {
         {
             if($this->session->userdata('id')!=null)
             { 
+                //elementos persistentes
+                      $lista['pf'] =$this->session->userdata('id');
+                     // $menu['mensaje']=  $this->session->userdata('nombre'); 
+                      $menu['contenido']=  $this->session->userdata('nombre'); 
+                      $menu['menu']=  $this->cargarMenu(); 
+                      $menu['usr']=  $this->load->view('admin/elementos/user',$menu,true);
+                      $cont['header']=  $this->load->view('admin/elementos/header',$menu,true);
+                      $cont['preface']=  $this->load->view('admin/elementos/preface',$lista,true);                     
+                      $cont['footer']=  $this->load->view('admin/elementos/footer',null,true);
+                //elementos persistentes
+                
+                
                 if($var=="new_user")
                 {
-                    
+                    $elem['contenido'] = $this->load->view('admin/usuario/new_user',null,true);
+                     $cont['main']=  $this->load->view('admin/elementos/main',$elem,true);
+                     echo $this->load->view('admin/administrador',$cont,true); 
                 }               
                 else
                 {
