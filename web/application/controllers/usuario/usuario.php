@@ -24,9 +24,11 @@ class Usuario extends CI_Controller {
                }
             }                        
         }
-        function validarEmail()
+        function validarmail()
         {
             $var=  $this->input->post('mail',true);
+            echo $var;
+            exit();
             $rea=false;
             if($var!="")
             {
@@ -38,10 +40,12 @@ class Usuario extends CI_Controller {
         }
         function validarEmail2($var="")
         {
+            
             $rea=false;
             if($var!="")
             {
-                 $this->load->model('usuario/usuario_model','modelo');
+                $var = str_replace($var, "_", "@");
+                $this->load->model('usuario/usuario_model','modelo');
             $rea =  $this->modelo->validarEmail($var);
             }
             echo $rea;

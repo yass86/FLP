@@ -5,8 +5,8 @@ class Admin extends CI_Controller {
             if($this->session->userdata('id')!=null)
             {             
               $lista['pf'] = "";
-              $menu['mensaje']=  $this->session->userdata('nombre'); 
-              $menu['contenido']=  $this->session->userdata('nombre'); 
+              $menu['mensaje']=  ""; 
+              $menu['contenido']=  ""; 
               $menu['menu']=  $this->cargarMenu(); 
               $menu['usr']=  $this->load->view('admin/elementos/user',$menu,true);
               $cont['header']=  $this->load->view('admin/elementos/header',$menu,true);
@@ -34,7 +34,7 @@ class Admin extends CI_Controller {
             if($this->session->userdata('id')!=null)
             { 
                 //elementos persistentes
-                      $lista['pf'] =$this->session->userdata('id');
+                      $lista['pf'] ="";
                      // $menu['mensaje']=  $this->session->userdata('nombre'); 
                       $menu['contenido']=  $this->session->userdata('nombre'); 
                       $menu['menu']=  $this->cargarMenu(); 
@@ -47,7 +47,7 @@ class Admin extends CI_Controller {
                 
                 if($var=="new_user")
                 {
-                    $elem['contenido'] = $this->load->view('admin/usuario/new_user',null,true);
+                     $elem['contenido'] = $this->load->view('admin/usuario/new_user',null,true);
                      $cont['main']=  $this->load->view('admin/elementos/main',$elem,true);
                      echo $this->load->view('admin/administrador',$cont,true); 
                 }               

@@ -1,6 +1,6 @@
 <nav id="block-main-menu" class="block block-menu">
                   <div class="content">
-                      <ul class="main-menu items-menu level-one"> 
+                      <ul class="admin-menu items-menu level-one"> 
                       <?php                       
                     //  echo "<pre>".print_r($lista,true)."</pre>";                   
                       foreach ($lista as $key => $value){                          

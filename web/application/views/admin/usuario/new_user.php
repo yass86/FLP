@@ -1,4 +1,4 @@
-<form id="new-form-person" method="post" action="<?php echo site_url('usuario/crearUsuario') ?>">
+<form id="new-form-person" method="post" action="<?php echo site_url('usuario/crearUsuario')?>" >
     <div class="form-item field-mail">
         <label for="">Correo electronico<span>*</span></label>
         <input type="text" name="mail" id="mail" class="input" value="">
@@ -21,7 +21,8 @@
 </form> 
 <script type="text/javascript">
     $('#mail').change(function(){
-        var mail = $('#mail').attr('value')
-       validarExisteMail("usuario/validarEmail/"+mail,"new-form-person"); 
+        var mail = $('#mail').attr('value');
+        mail = mail.replace("@","_");
+       validarExisteMail("usuario/validarmail/","new-form-person"); 
     });
 </script>
