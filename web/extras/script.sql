@@ -23,6 +23,11 @@ INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('editar_usuario','E
 INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('crear_producto','Producto Nuevo','admin/ir/producto_nuevo','Producto',0);
 INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('editar_producto','Editar Producto','admin/ir/editar_producto','Producto',1);
 
+CREATE TABLE reset(
+id int AUTO_INCREMENT PRIMARY KEY,
+id_usuario bigint,
+pin text
+);
 
 
 LOAD DATA INFILE 'd:/pre.csv' INTO TABLE precio_carroceria FIELDS TERMINATED BY ';'  LINES TERMINATED BY '\n';

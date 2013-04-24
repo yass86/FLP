@@ -3,14 +3,48 @@ class Login extends CI_Controller
 {
     public function index()
     {             
+              $this->session->sess_destroy();
               $menu['menu']=  ""; 
               $menu['mensaje']=  "LOGIN FLP"; 
-              $cont['header']= "";
+              $cont['header']=  "";
               $cont['preface']= "";
               $cont['main']=  $this->load->view('admin/usuario/login',null,true);
               $cont['footer']= "";
               echo $this->load->view('admin/administrador',$cont,true);   
     }
+    //reestablecer contraseña
+        function olvido_contrasena()
+        {
+              $menu['menu']=  ""; 
+              $menu['mensaje']=  "LOGIN FLP"; 
+              $cont['header']= "";
+              $cont['preface']= "";
+              $cont['main']=  $this->load->view('admin/usuario/new_pwd',null,true);
+              $cont['footer']= "";
+              echo $this->load->view('admin/administrador',$cont,true); 
+        }
+        function actualizar_usuario()
+        {
+            $id = $this->session->userdata('id');
+            
+            if($id!=null)
+            {
+                $this->load->model('usuario/usuario_model','modelo');            
+                $datos = $this->modelo->getdatos_usuario($id);
+                $menu['menu']=  ""; 
+                $menu['mensaje']=  "LOGIN FLP"; 
+                $cont['header']= "";
+                $cont['preface']= "";
+                $cont['main']=  $this->load->view('admin/usuario/new_user',$datos,true);
+                $cont['footer']= "";
+                echo $this->load->view('admin/administrador',$cont,true); 
+            }
+            else
+            {
+                redirect();
+            }
+        }
+        //validar si existe un correo 
     function Validar()
     {
        $us = $this->input->post('mail', true);
@@ -26,6 +60,13 @@ class Login extends CI_Controller
            redirect('login/error');
             
       }
+    }
+    function reset()
+    {
+       $us = $this->input->post('mail', true);      
+       $this->load->model('login/login_model','valido');
+       
+      
     }
     function iniciarSesion($us)
     {

@@ -42,6 +42,15 @@ function validarSiNumero(numero){
       } 
   }
 
+
+function pwd_igual(pwd1,pwd2)
+{
+    var ret = false;
+    if(pwd1==pwd2)
+        ret=true;
+    return ret;
+}
+
 function validar(cc,ape,nom,mail,con)
 {
     var texto="";
@@ -78,4 +87,30 @@ function validar(cc,ape,nom,mail,con)
          alert(texto);
          }             
      return correcto;     
+}
+
+function validar_new_user()
+{
+    var valido = true;
+        var nom = $("#nombre").attr("value");
+        var mail = $("#mail").attr("value");
+        var p1 = $("#pwd").attr("value");
+        var p2 = $("#pwd1").attr("value");        
+        var vpwd = pwd_igual(p1,p2);
+        var vm = valEmail(mail);
+        var usr = validar('cc','ape',nom,mail,'con');
+        var al = "";
+        
+        if(!vm)
+            al+="EL CORREO NO ESTA EN FORMATO ADECUADO \n";
+        if(!vpwd)
+            al+="CONTRASEÑA NO COINCIDEN\n";
+        if(!usr)
+            al+="EL CAMPO USUARIO NO DEBE ESTAR VACIO\n";
+        
+        if(al.length>1){
+            alert(al);
+            valido = false;
+        }
+    return valido;
 }

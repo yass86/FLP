@@ -20,6 +20,7 @@
     <script type="text/javascript" src="<?php echo site_url('theme/js/jquery.tinycarousel.min.js')?>"></script>
     <script type="text/javascript" src="<?php echo site_url('theme/js/custom.js')?>"></script>
     <script type="text/javascript" src="<?php echo site_url('theme/js/utiles.js')?>"></script>
+    <script type="text/javascript" src="<?php echo site_url('theme/js/validacion.js')?>"></script>
   </head>
   <body class="front no-sidebars" dir="<?php echo site_url();?>">
       <div id="page">

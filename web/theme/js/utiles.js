@@ -17,7 +17,14 @@ function validarExisteMail(url,div)
         type: $("#"+div).attr('method'),
         data:$("#"+div).serialize(),
         success: function(msg){            
-            alert(msg);            
+            
+            if(msg!="-1"){
+                alert("ESTA CUENTA DE CORREO YA SE ENCUENTRA ACTIVA");
+                $("#mail").attr('value',"");
+            }
+            
+           // alert(msg);            
+          //  $("#reto").html(msg);
         }
     });
 }
