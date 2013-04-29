@@ -23,6 +23,8 @@ INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('editar_usuario','E
 INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('crear_producto','Producto Nuevo','admin/ir/producto_nuevo','Producto',0);
 INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('editar_producto','Editar Producto','admin/ir/editar_producto','Producto',1);
 
+INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('nueva_seccion','Nueva Seccion','admin/ir/nueva_seccion','Seccion',0);
+
 CREATE TABLE reset(
 id int AUTO_INCREMENT PRIMARY KEY,
 id_usuario bigint,

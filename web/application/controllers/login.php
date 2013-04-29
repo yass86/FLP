@@ -78,11 +78,14 @@ class Login extends CI_Controller
             $usuario['nombre']=$value->nombre;
             $usuario['tipo']=$value->tipo;            
        }
+         $_SESSION['KCFINDER'] = array();
+          $_SESSION['KCFINDER']['disabled'] = false;
        $this->session->set_userdata($usuario);
     }
     function cerrar()
     {
-        $this->session->sess_destroy();//destruir session
+        $_SESSION['KCFINDER']['disabled'] = true;
+        $this->session->sess_destroy();//destruir session        
         redirect();
     }
     function error()

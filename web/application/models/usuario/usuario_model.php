@@ -56,7 +56,7 @@ class usuario_model extends CI_Model
     function getdatos_usuario($id="")
     {
        $existe=null;
-        if($id!="")
+        if($id!=null)
         {
             $sql = "SELECT * from usuario where id_usuario = '$id'";
              $lista = $this->db->query($sql)->result();             
@@ -64,8 +64,7 @@ class usuario_model extends CI_Model
                  $existe['id']= $value->id_usuario;
                  $existe['nombre']= $value->nombre;
                  $existe['mail']= $value->mail;
-                 $existe['pwd']= $value->pass;
-                 
+                 $existe['pwd']= $value->pass;                 
              }
         }
         return $existe;

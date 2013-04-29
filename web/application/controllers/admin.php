@@ -20,6 +20,13 @@ class Admin extends CI_Controller {
                 redirect();
             }
 	}
+        function ck()
+        {
+             $this->load->library('ckeditor', array('instanceName' => 'CKEDITOR1','basePath' => base_url()."ckeditor/", 'outPut' => true));
+             echo $this->load->view('admin/wisiwi/wisiwi', null);
+        }
+        
+        
         //cargar menu administrador 
         function cargarMenu()
         {
@@ -30,8 +37,8 @@ class Admin extends CI_Controller {
         
         //parcelador de menus 
         function  ir($var="")
-        {
-            if($this->session->userdata('id')!=null)
+        {              
+            if($this->session->userdata('id')!=null&$var!="")
             { 
                 //elementos persistentes
                       $lista['pf'] ="";
@@ -42,48 +49,43 @@ class Admin extends CI_Controller {
                       $cont['header']=  $this->load->view('admin/elementos/header',$menu,true);
                       $cont['preface']=  $this->load->view('admin/elementos/preface',$lista,true);                     
                       $cont['footer']=  $this->load->view('admin/elementos/footer',null,true);
-                       $this->load->model('usuario/usuario_model','modelo'); 
-                //elementos persistentes
-                
-                
+                      $this->load->model('usuario/usuario_model','modelo'); 
+                //elementos persistentes  
+                                            
                 if($var=="new_user")
                 {
                     $elem['id']=0;
                     $elem['mail']="";
                     $elem['nombre']="";
-                    $elem['pwd']=0;
+                    $elem['pwd']="";
                      $elem['contenido'] = $this->load->view('admin/usuario/new_user',$elem,true);
                      $cont['main']=  $this->load->view('admin/elementos/main',$elem,true);
-                   
-                }               
+                  
+                }                                           
                 else if($var=="update_user")
-                {                        
+                {       
+                        $this->load->model('usuario/usuario_model','mode');
                         $id = $this->session->userdata('id');
-                        $datos = $this->modelo->getdatos_usuario($id);
-                        $menu['menu']=  ""; 
-                        $menu['mensaje']=  "LOGIN FLP"; 
-                        $cont['header']= "update user";
-                        $cont['preface']= "";
-                        $cont['main']=  $this->load->view('admin/usuario/new_user',$datos,true);
-                        $cont['footer']= "";                                      
+                        $datos = $this->mode->getdatos_usuario($id);                        
+                        $up['contenido'] = $this->load->view('admin/usuario/update_user',$datos,true);                                                                    
+                        $cont['main']=  $this->load->view('admin/elementos/main',$up,true);                     
                 } //update_user  
                 else if($var=="del_user")
-                {
-                        $id = $this->session->userdata('id');
-                        $datos = $this->modelo->getdatos_usuario($id);
-                        $menu['menu']=  ""; 
-                        $menu['mensaje']=  "LOGIN FLP"; 
-                        $cont['header']= "";
-                        $cont['preface']= "del user";
-                        $cont['main']=  "";
-                        $cont['footer']= "";  
-                }
-               echo $this->load->view('admin/administrador',$cont,true); 
+                {                               
+                        $del['contenido'] = $this->load->view('admin/usuario/error',null,true);                                                                    ;                                                                    
+                        $cont['main']=  $this->load->view('admin/elementos/main',$del,true);                    
+                }//del_user    
+                
+                //impresion el template
+              ///  echo "<pre>".print_r($cont,true)."</pre>";
+             //   exit();
+                 echo $this->load->view('admin/administrador',$cont,true);                
+                 //impresion el template
             }
             else
             {
                 redirect();
-            }
+            }            
         }
                
 } 
