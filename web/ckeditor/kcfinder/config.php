@@ -40,7 +40,6 @@ $_CONFIG = array(
             'move' => true,
             'rename' => true
         ),
-
         'dirs' => array(
             'create' => true,
             'delete' => true,

@@ -47,18 +47,17 @@
 
 $active_group = 'default';
 $active_record = TRUE;
-/*
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'artifexc_mrpc';
-$db['default']['password'] = 'mrpc2011';
-$db['default']['database'] = 'artifexc_mrpc';*/
-
-
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'user-flp';
 $db['default']['password'] = 'aguayo2012';
 $db['default']['database'] = 'flp';
+/*
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '';
+$db['default']['database'] = 'flp';*/
+
 
 
 $db['default']['dbdriver'] = 'mysql';
