@@ -67,9 +67,9 @@
 <body>
  
 <div id="container">
-    <h1>WisiWi</h1>
+    <h1>WYSIWYG</h1>
  
-    <div id="body"><h2>CAMPO WISIWI</h2>
+    <div id="body"><h2>CAMPO WYSIWYG</h2>
         <?php
         $config_mini = array();  
  
