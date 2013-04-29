@@ -20,7 +20,7 @@ class Admin extends CI_Controller {
                 redirect();
             }
 	}
-        function ck()
+        private function ck()
         {
              $this->load->library('ckeditor', array('instanceName' => 'CKEDITOR1','basePath' => base_url()."ckeditor/", 'outPut' => true));
              echo $this->load->view('admin/wisiwi/wisiwi', null);
@@ -75,6 +75,11 @@ class Admin extends CI_Controller {
                         $del['contenido'] = $this->load->view('admin/usuario/error',null,true);                                                                    ;                                                                    
                         $cont['main']=  $this->load->view('admin/elementos/main',$del,true);                    
                 }//del_user    
+                else if($var=="ck")
+                {      $del['contenido'] =  $this->ck();                                                                                     ;                                                                    
+                        $cont['main']=  $this->load->view('admin/elementos/main',$del,true);                           
+                       
+                }//prueba_ck    
                 
                 //impresion el template
               ///  echo "<pre>".print_r($cont,true)."</pre>";
