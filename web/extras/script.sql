@@ -27,6 +27,15 @@ INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('editar_producto','
 
 INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('nueva_seccion','Nueva Seccion','admin/ir/nueva_seccion','Seccion',0);
 
+INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('nueva_pagina','Pagina Nueva','admin/ir/nueva-pagina','Pagina',0);
+INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('editar_pagina','Editar Nueva','admin/ir/Editar-pagina','Pagina',1);
+INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('eliminar_pagina','Eliminar Nueva','admin/ir/Eliminar-pagina','Pagina',2);
+
+INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('nueva_galeria','Galeria Nueva','admin/ir/nueva-galeria','Contenido',0);
+INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('nueva_bloque','Bloque Nuevo','admin/ir/nueva-Bloque','Contenido',1);
+INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('nueva_baner','Baner Nuevo','admin/ir/nueva-Baner','Contenido',2);
+INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('nueva_contacto','Contacto Nuevo','admin/ir/nueva-Contactenos','Contenido',3);
+
 CREATE TABLE reset(
 id int AUTO_INCREMENT PRIMARY KEY,
 id_usuario bigint,

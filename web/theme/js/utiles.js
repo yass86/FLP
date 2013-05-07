@@ -1,10 +1,20 @@
-urlbase = "";
 function getHtml(div, url)
 {
     $.ajax({
         url: urlbase + url,
         type: $("#"+div).attr('method'),
         data: $("#"+div).serialize(),
+        success: function(msg) {
+            $('#' + div).html(msg);
+        }
+    });
+}
+function getHtmlPlano(div, url)
+{
+    $.ajax({
+        url: urlbase + url,
+        type: "post",
+        data: "",
         success: function(msg) {
             $('#' + div).html(msg);
         }

@@ -31,6 +31,12 @@ class util extends CI_Model
          $retorno = $this->db->query($sql)->result();            
          return $retorno;       
     }
+    function getidiomas()
+    {       
+         $sql="select * from idioma";
+         $retorno = $this->db->query($sql)->result();            
+         return $retorno;       
+    }
     function getSubMenu($tipo)
     {
          $sql="select * from menu where tipo = '$tipo' order by id_menu asc";
