@@ -1,6 +1,6 @@
 <?php 
 class Flp extends CI_Controller {
-	public function index()
+	public function index($idioma,$seccion,$pagina)
 	{          
             $cont['header']=  $this->load->view('front/header',null,true);
             $cont['preface']=  $this->load->view('front/preface',null,true);
@@ -12,5 +12,9 @@ class Flp extends CI_Controller {
         function precarga()
         {
             echo $this->load->view("preload",null,true);
+        }
+        function slu()
+        {
+            
         }
 } 
