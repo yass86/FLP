@@ -89,8 +89,8 @@ class Admin extends CI_Controller {
                 $cont['main'] = $this->load->view('admin/elementos/main', $sec, true);
             }//eliminar seccion 
             
-            else if ($var == "ck") {
-                $del['contenido'] = $this->ck();
+            else if ($var == "tiny") {
+                $del['contenido'] = $this->load->view('admin/wisiwi/tiny',null,true);
                 $cont['main'] = $this->load->view('admin/elementos/main', $del, true);
             }//prueba_ck    
             //impresion el template
