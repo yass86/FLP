@@ -30,7 +30,7 @@
 <?php echo $header; ?>
 <?php echo $preface; ?>
 <?php echo $main; ?>
-            <?php echo $footer; ?> 
+<?php echo $footer; ?> 
         </div><!--/.page -->  
     </body>
     <script type="text/javascript">

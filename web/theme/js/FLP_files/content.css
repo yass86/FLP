@@ -1,0 +1,221 @@
+﻿/***** slide****/
+#slideshow {
+min-height: 285px;
+margin-bottom: 40px;
+}
+#block-slide-home .content-slide{
+position: absolute;
+width: 53%;
+top: 0;
+left: 0;
+}
+#block-slide-home .content-slide p {
+color: #767676;
+font-size: 17px;
+}
+.content-slide  h1 {
+margin: 20px 0 0 0;
+line-height: 1;
+}
+#nav-slide  {
+z-index: 10;
+position: relative;
+}
+#nav-slide a {
+background: #9A9A9A;
+font-size: 0;
+width: 8px;
+height: 8px;
+border-radius: 5px;
+float: left;
+margin: 5px 3px;
+}
+#nav-slide a.active, #nav-slide a:hover {
+	background: #FB9D00;
+}
+
+#block-carrousel.block .viewport {
+	width: 892px;
+}
+#block-carrousel .overview {
+		margin: 0;
+	padding: 0;
+}
+/*** carrousel***/
+#block-carrousel.block .overview li {
+height: 80px;
+border: 0;
+width: 85px;
+list-style: none;
+position: relative;
+}
+#block-carrousel.block .overview li:hover span {
+	  background: url(../images/hover-carrousel.png) 0px 0px repeat;
+	  width: 85px;
+	  height: 77px;
+	  display: block;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+}
+#block-carrousel.block .buttons {
+	width: 23px;
+height: 58px;
+}
+#block-carrousel .buttons.prev {
+	  background: url(../images/left-carrousel.png) 0px 0px no-repeat;
+	  margin: 10px 10px 0 0;
+}
+#block-carrousel .buttons.next {
+	  background: url(../images/right-carrousel.png) 0px 0px no-repeat;
+	  margin: 10px 0 0 10px;
+}
+/****home****/
+.front  h2 {
+	color: #DF7C35;
+	font-size: 18px;
+}
+.front .font-green h2 {
+	color: #1ab259;
+}
+.columnx3 {
+width: 29.1%;
+margin: 1.1%;
+float: left;
+padding: 1%;
+}
+.text-left p {
+	float: left;
+	width: 46%;
+	margin-top: 0;
+}
+.text-left img {
+float: right;
+border: 1px solid #E5E5E5;
+}
+.text-left{
+	background: #FBFBFB;
+  background: -moz-linear-gradient(#FFFFFF 15%, #FBFBFB 50%, #F3F3F3);
+  background:  -webkit-linear-gradient(#FFFFFF 15%, #FBFBFB 50%, #F3F3F3);
+  background:  -o-linear-gradient(#FFFFFF 15%, #FBFBFB 50%, #F3F3F3);
+  background: linear-gradient(#FFFFFF 15%, #FBFBFB 50%, #F3F3F3);
+}
+.text-left a {
+	clear: left;
+	float: left;
+}
+#webform-correo-electronico {
+	clear: left;
+}
+#webform-telefono{
+	float: left;
+	width: 49%;
+	margin-right: 1%;
+}
+#webform-pais {
+	float: right;
+	width: 49%;
+	margin-left: 1%;
+}
+#banner-distribuidores .content span,
+#banner-proveedores .content span  {
+display: block;
+text-align: center;
+}
+#block-carrousel .items-tabs {
+margin-top: -30px;
+}
+/**** tabs***/
+.items-tabs {
+	border-bottom: 3px solid #009840;
+margin-bottom: 20px;
+}
+.items-tabs ul {
+padding: 0;
+margin: 0;
+overflow: hidden;
+text-align: center;
+}
+.items-tabs ul li {
+	display: inline-block;
+	list-style: none;
+	*display: inline;
+	*zoom:1;
+}
+.items-tabs ul li a {
+background: #CDECD9;
+display: block;
+padding: 8px 10px 5px;
+color: #666666;
+text-decoration: none;
+margin-right: 5px;
+}
+.items-tabs ul li a:hover, .items-tabs ul li a.active {
+	background: url(../images/back-tab-selected.jpg) center top no-repeat;
+	color: #FFF;
+}
+/**** resultados de busqueda***/
+#webform-palabras-clave .form-item {
+	width: 250px;
+	float: left;
+}
+#sidebar-last .block{
+background: #FFF9E7;
+padding: 16px;
+margin-bottom: 30px;
+}
+#sidebar-last .block h2 {
+font-size: 19px;
+color: #1AB259;
+}
+.view-results .view-row {
+padding-bottom: 15px;
+border-bottom: 1px solid #D7731F;
+margin-bottom: 20px;
+}
+.view-results .view-row h2 {
+	margin-bottom: 0;
+}
+.view-results .view-row h2 a {
+	font-size: 20px;
+}
+/**** acordeon***/
+#sidebar-last .block.acoordeon {
+	background: none;
+	padding: 0;
+}
+#sidebar-last .block.acoordeon  h2 {
+	color: #D5640F;
+}
+.items-acoordeon h3 {
+	font-family: 'PT Sans', sans-serif;
+color: #1B904D;
+cursor: pointer;
+border-left: 10px solid #00B74C;
+background: #DCF5E6;
+padding: 10px 30px;
+font-size: 14px;
+}
+.items-acoordeon ul li {
+	list-style: none;
+}
+/***** paginador***/
+.items-pager {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.items-pager li {
+	list-style: none;
+	display: inline-block;
+	margin: 5px;
+	*display: inline;
+	*zoom:1;
+}
+.items-pager li.current-pager {
+	color: #D5640F;
+	font-size: 15px;
+}
+.items-pager li a {
+	font-size: 15px;
+}

@@ -1,0 +1,92 @@
+
+#header {
+    background: url(../images/bg-header.png) repeat-x 0 0;
+}
+#block-breadcrumbs {
+background: url("../images/arrow-breadcrumb.jpg") no-repeat scroll 0 0 transparent;
+    color: #D1680D;
+font-size: 14px;
+padding-left: 25px;
+margin: 30px 0 20px;
+}
+#block-logo{
+    background: url("../images/bg-logo.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 115px;
+    padding-top: 40px;
+    text-align: center;
+    width: 360px;
+}
+#block-user-menu .content ul  {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#block-user-menu .content ul  li {
+margin: 0 2px;
+display: inline-block;
+}
+#block-user-menu .content ul  li  a {
+    color:#FFF;
+    padding:6px 33px 5px 15px;
+    display:block;
+    text-decoration:none;
+}
+#block-user-menu .content ul  li  a:active{
+    color:#b29762;
+}
+ #block-buscar  {
+float: right;
+margin: 7px 0 0 5px;
+}
+#searchform input[type="submit"]  {
+background: url(../images/ico-buscador.png) no-repeat center center;
+font-size: 0;
+border: 0;
+width: 17px;
+height: 24px;
+cursor: pointer;
+padding: 3px;
+float: left;
+margin: 0 5px;
+}
+#searchform  input[type="text"] {
+border: 0;
+margin: 0;
+font-size: 12px;
+padding: 5px 10px 5px 10px;
+float: right;
+background: transparent;
+width: 150px;
+text-align: right;
+}
+#searchform {
+    background: #FFF9E7;
+border: #C0D9BC 1px solid;
+overflow: hidden;
+}
+.block-breadcrumbs  {
+float: left;
+padding: 20px 0 12px 70px;
+}
+#block-user-menu {
+text-align: right;
+padding: 5px 55px 0 0;
+}
+.block-breadcrumbs span {
+    padding: 10px 0px 0px 5px;
+color: #ffdd00;
+}
+.block-breadcrumbs a {
+    color: #fff;
+    font-size: 16px;
+}
+.block-breadcrumbs a:hover{
+text-decoration: underline;
+color: #b29762;
+}
+.tabs ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}

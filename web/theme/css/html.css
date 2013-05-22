@@ -1,134 +1,138 @@
-html {
 
+@font-face {
+  font-family: 'Conv_Museo300-Regular';
+  src: url('../fonts/Museo300-Regular.eot');
+  src: local('☺'), url('../fonts/Museo300-Regular.woff') format('woff'), url('../fonts/Museo300-Regular.ttf') format('truetype'), url('../fonts/Museo300-Regular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-    font-family: 'museo300';
-    color: #666666;
-    margin: 0;
-    font-weight: 300;
-    background-image: url("../images/fondo.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center bottom;
+  font-family: 'PT Sans', sans-serif;
+  margin: 0px;
+  color: #666666;
+  line-height: 1.2;
 }
 p {
-    font-family: 'PT Sans', sans-serif;
-    font-size: 14px;
-    color: #000;
-    margin: 5px 0;
-    font-weight: 400;
+  font-size: 13px;
+  color: #000;
+  margin: 10px 0;
 }
-::selection {
-    background: #C9DC3E;
-    color: 000;
-    text-shadow: none;
+span {
+  margin: 0;
+  padding: 0;
 }
-/* enlaces */
-
-a:link {
-    color: #9d2f21;
-    text-decoration: none;
+ul, li {
+  list-style: disc;
+  font-size: 14px;
+  color: #000;
+}
+a{
+  font-size: 14px;
+  color: #1fb25a;
+  text-decoration: underline;
 }
 a:hover {
-    color: #000;
-    text-decoration: underline;
+  font-size: 14px;
+  color: #cc6600;
+  text-decoration: underline;
 }
-
-ul {
-    font-size: 13px;
+a:active {
+  font-size: 14px;
+  color: #14773c;
 }
-/* headers */
-
 h1, h2, h3, h4 {
-    font-weight:normal;
-    margin: 0 0px 15px 0px;
+font-weight: 200;
+margin: 15px 0 15px 0;
 }
-h1{
-    font-family:"Times New Roman", Times, serif;
-    font-size:38px;
-    color:#000000;
-    font-style:italic;
+h1 {
+  font-family: 'Conv_Museo300-Regular', Sans-Serif;
+  font-size: 40px;
+  color: #1ab259;
 }
-
-h2{
-    font-size:24px;
-    color:#9f3223;
+h2 {
+  font-family: 'Conv_Museo300-Regular', Sans-Serif;
+  font-size: 26px;
+  color: #14773c;
 }
-h3{
-    font-size:16px;
-    color:#9f3223;
+h3 {
+  font-family: 'Conv_Museo300-Regular', Sans-Serif;
+  font-size: 20px;
+  color: #cc6600;
 }
-
-h4{
-    font-size:14px;
-    color:#9f3223;
+h4 {
+  font-family: 'Conv_Museo300-Regular', Sans-Serif;
+  font-size: 18px;
+  color: #14773c;
 }
-h5{
-    font-size:12px;
-    color:#9f3223;
+.wrapper-select {
+  background: url(../images/dd_arrow.gif) right center no-repeat #fff8e9;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+ }
+ label {
+font-style: italic;
+font-size: 14px;
+margin-right: 5px;
 }
-
-label {
+select {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #999999;
     display: block;
-    margin-top: 10px;
-    font-size: 13px;
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 7px;
+    font-size: 11px;
+    font-style: italic;
+    height: 27px;
+    padding: 4% 0 4% 4%;
+    width: 112%;
+   -webkit-appearance: none;
+   -moz-appearance:    none;
+   appearance:         none;
 }
-
-input[type="text"]{
-    border-width: 1px;
-    border-style: solid;
-    border-color: #b4b4b4 #fefefe #fefefe #b4b4b4;
-    background-color: rgb(252, 250, 250);
+input[type="text"], input[type="email"] {
+color: #999;
+font-style: italic;
+font-size: 11px;
+padding: 6px 4%;
+border: none;
+background-color: #fff8e9;
+width: 92%;
 }
-
-
 textarea {
-    width: 95%;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #b4b4b4 #fefefe #fefefe #b4b4b4;
-    background-color: rgb(252, 250, 250);
-    height:150px;
-    margin:10px 0px 10px 0px;
+  font-family: 'PT Sans', sans-serif;
+  width: 95%;
+  color: #999;
+  font-style: italic;
+  font-size: 13px;
+  padding: 7px 7px 0px 10px;
+  border: none;
+  background-color: #fff8e9;
+  height: 60px;
+}
+input[type="submit"], input[type="submit"]:visited, .btn-orange {
+background: url(../images/back-btn-generic.jpg) 0px 0px repeat-x #FEA50D;
+padding: 6px 15px;
+color: #FFFFFF;
+font-size: 13px;
+text-decoration: none;
+border-radius: 7px;
+cursor: pointer;
+display: inline-block;
+border: 1px solid #FFA700;
+*display: inline;
+*zoom:1;
+}
+input[type="submit"]:hover, .btn-orange:hover {
+  background: url(../images/back-btn-generic-hover.jpg) 0px 0px repeat-x #FCA20D;
+    color: #FFFFFF;
+  font-size: 13px;
+  text-decoration: none;
 }
 
-
-input[type="submit"], .btn-red {
-    background: none no-repeat scroll right center rgb(198,59,56);
-    background: none no-repeat scroll right center, -moz-linear-gradient(rgb(198,59,56)50%, rgb(132,40,39));
-    background: none no-repeat scroll right center, -webkit-linear-gradient(rgb(198,59,56)50%, rgb(132,40,39));
-    background: none no-repeat scroll right center, -o-linear-gradient(rgb(198,59,56)50%, rgb(132,40,39));
-    background: none no-repeat scroll right center, linear-gradient(rgb(198,59,56)50%, rgb(132,40,39));
-    padding:8px 20px;
-    color:#FFFFFF;
-    font-size:13px;
-    text-decoration:none;
-    border-radius:5px;
-    border: none;
-    cursor:pointer;
-    margin: 0;
-    overflow: hidden;
+input:focus, textarea:focus {
+  outline: solid #f8ba25 1px;
 }
-.btn-red {
-    padding: 0;
-}
-input[type="submit"]:hover, .btn-red:hover{
-    background: none no-repeat scroll right center rgba(74,73,73,1);
-    background: none no-repeat scroll right center, -moz-linear-gradient(rgba(74,73,73,1))50%, rgba(17,17,17,1));
-    background: none no-repeat scroll right center, -webkit-linear-gradient(rgba(74,73,73,1)50%, rgba(17,17,17,1));
-    background: none no-repeat scroll right center, -o-linear-gradient(rgb(198,59,56)50%, rgba(17,17,17,1));
-    background: none no-repeat scroll right center, linear-gradient(rgb(198,59,56)50%, rgba(17,17,17,1));
-}
-
-input[type="submit"]:active,  input[type="submit"]:visited{
-    background: none no-repeat scroll right center rgba(103,69,43,1);
-    background: none no-repeat scroll right center, -moz-linear-gradient(rgba(103,69,43,1))50%, rgba(82,55,35,1));
-    background: none no-repeat scroll right center, -webkit-linear-gradient(rgba(103,69,43,1)50%, rgba(82,55,35,1));
-    background: none no-repeat scroll right center, -o-linear-gradient(rgba(103,69,43,1)50%, rgba(82,55,35,1));
-    background: none no-repeat scroll right center, linear-gradient(rgba(103,69,43,1)50%, rgba(82,55,35,1));
+.form-item, .form-actions {
+  margin: 5px 0;
 }

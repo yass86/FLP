@@ -4,7 +4,7 @@ $(document).ready(function(){
   $('#block-carrousel').tinycarousel({ display: 2 });
   $('#slideshow').cycle({ 
     fx:         'scrollLeft', 
-    timeout:     3000, 
+    timeout:     1000, 
     pager:      '#nav', 
     pagerEvent: 'mouseover', 
     fastOnEvent: true 

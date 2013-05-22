@@ -1,51 +1,120 @@
 /*GENERALIDADES FOOTER*/
-#footer  li {
-  margin-bottom: 2px;
-}
-.info-site p{
-margin: 3px 0;
-color: rgba(254,221,100,1);
-font-size: 12px;
-}
-#footer {
-    background: url("../images/bottom-back.png") no-repeat center 0 transparent;
-    padding-top: 100px;
+#footer-second{
+  border-top: 1px solid #DB8E00;
+  background: #FFA400;
+  background: -moz-linear-gradient(#FBBA00 15%, #FEB100 50%, #FFA400);
+  background:  -webkit-linear-gradient(#FBBA00 15%, #FEB100 50%, #FFA400);
+  background:  -o-linear-gradient(#FBBA00 15%, #FEB100 50%, #FFA400);
+  background: linear-gradient(#FBBA00 15%, #FEB100 50%, #FFA400);
 }
 /*FOOTER MENU*/
-#zone-footer  ul{
+#footer  ul li {
+  list-style: none;
+}
+#footer ul{
   list-style: none outside none;
   margin: 0;
   padding: 0;
 }
-#block-menu-footer .content > ul >  li{
+#block-menu-footer .content > ul >  li {
 padding-right: 30px;
 float: left;
-border-right: 1px solid #F5E002;
 margin-right: 30px;
+background: url(../images/separador.png) right center no-repeat;
+min-width: 85px;
 }
-#zone-footer .content > ul >  li > span a{
-color: #EECF03;
+#block-menu-footer .content > ul >  li.last {
+  margin-right: 0;
+  background: none;
+}
+#block-menu-footer .content > ul >  li > a{
+font-weight: 500;
+text-decoration: none;
+font-size: 16px;
+color: #008330;
 display: block;
-margin-right: 16px;
-  height: 70px;
-display: table-cell;
-vertical-align: middle;
-
+margin-bottom: 2px;
 }
-#zone-footer .content > ul >  li > span {
-float: left;
-margin-right: 15px;
-}
-#zone-footer .content > ul >  li.expanded > ul {
+#block-menu-footer .content > ul >  li.expanded > ul {
 float: left;
 }
-#zone-footer ul.menu li a:hover {
-  color: #D0C7B5;
+#block-menu-footer .content > ul > li.expanded li {
+  float: left;
+  width: 33%;
 }
-#zone-footer .content > ul >  li li > a{
-  color: #FFF;
+#block-menu-footer .content > ul > li.expanded  {
+  width: 300px;
 }
-
-#footer .section-inner {
+#block-menu-footer .content > ul >  li li > a{
+  color: #5F4203;
+  font-size: 12px;
+  text-decoration: none;
+}
+.logo-footer {
+font-size: 0;
+border-right: 1px solid #C9C9C9;
+padding: 25px;
+float: left;
+width: 200px;
+}
+.logo-global {
+background: url(../images/global.png) center center no-repeat;
+}
+.logo-bcsi {
+background: url(../images/bcsi.png) center center no-repeat;
+}
+.logo-rainforest {
+background: url(../images/alliance.png) center center no-repeat;
+}
+.btn-politicas {
+text-align: center;
+padding: 8px 0;
+width: 200px;
+float: right;
+}
+#block-info-site{
+float: left;
+width: 100%;
+}
+#footer-second .section-inner {
   padding: 25px 20px;
+}
+#footer-first {
+  border-top: 1px solid #ffffff;
+  background: #F3F3F3;
+  padding: 10px;
+}
+#footer {
+  border-top: 1px solid #CCCACA;
+  margin-top: 50px;
+}
+#block-info-site p {
+  margin: 0;
+  width: 33%;
+  float: left;
+  color: #6D4E06;
+  font-size: 12px;
+}
+.info-redes a, .info-redes a:hover {
+color: #6D4E06;
+text-decoration: none;
+padding-left: 20px;
+font-size: 12px;
+margin: 0 5px;
+}
+#block-menu-footer {
+overflow: hidden;
+margin-bottom: 50px;
+}
+.info-redes {
+  text-align: center;
+}
+.info-aguayo {
+  text-align: right;
+}
+.ico-facebook {
+  background: url(../images/ico-facebook.png) left center no-repeat;
+}
+.ico-twitter {
+  background: url(../images/ico-twitter.png) left center no-repeat;
 }

@@ -1,8 +1,6 @@
 <?php
-
 class Admin extends CI_Controller {
-
-    public function index() {
+public function index() {
         if ($this->session->userdata('id') != null) {
             $lista['pf'] = "";
             $menu['mensaje'] = "";
@@ -75,7 +73,17 @@ class Admin extends CI_Controller {
                 $var['titulo'] = "NUEVA SECCION";
                 $sec['contenido'] = $this->load->view('admin/seccion/nueva_seccion', $var, true);
                 $cont['main'] = $this->load->view('admin/elementos/main', $sec, true);
-            }//nueva seccion  
+            }//nueva pagina  
+            else if ($var == "nueva-pagina") {
+                $var = array();
+                $var['idioma'] = $this->getIdiomas(0,"idioma");
+                $var['nombre'] = "";
+                $var['slu'] = "";
+                $var['id'] = "0";
+                $var['titulo'] = "NUEVA PAGINA";
+                $sec['contenido'] = $this->load->view('admin/seccion/nueva_seccion', $var, true);
+                $cont['main'] = $this->load->view('admin/elementos/main', $sec, true);
+            }//nueva pagina
             else if ($var == "editar-seccion") {
                 $var = array();
                 $var['idioma'] = $this->getIdiomasSigla(0,"edit-idioma");
