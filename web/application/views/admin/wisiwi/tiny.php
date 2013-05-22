@@ -2,9 +2,11 @@
     <form method="post" action="<?php echo site_url() ?>">
         <textarea name="content" style="width:100%">
         </textarea>
+        
     </form>
 </div>
 <script type="text/javascript">
+    
     tinyMCE.init({
         // General options
         mode: "textareas",

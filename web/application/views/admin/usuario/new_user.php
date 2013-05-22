@@ -19,11 +19,29 @@
     <div class="form-item btn-register-submit">
         <input type="submit" class="" name="" id="submit-login" value="Registrar">
     </div>
+    <div class="form-item btn-register-submit">
+        <div id="queue"></div>
+     <input id="file_upload" name="file_upload" type="file" multiple="true">
+     
+    </div>
     
     <div class="form-item btn-register-submit" id="reto">
     </div>
 </form> 
 <script type="text/javascript">
+    
+    <?php $timestamp = time();?>
+    
+    $('#mail').change(function(){        
+       $('#file_upload').uploadify({
+				'formData'     : {
+					'timestamp' : '<?php echo $timestamp;?>',
+					'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
+				},
+				'swf'      : 'uploadify.swf',
+				'uploader' : 'uploadify.php'
+			}); 
+    });
     $('#mail').change(function(){        
        validarExisteMail("usuario/usuario/validarmail/","new-form-person"); 
     });
