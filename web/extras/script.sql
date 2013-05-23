@@ -58,11 +58,12 @@ slu_seccion
 
 CREATE TABLE pagina(
 id_pagina int AUTO_INCREMENT PRIMARY KEY,
-seccion bigint,
-slu_pagina,
+id_seccion bigint,
+slu text,
 titulo text,
-texto text,
 texto_destacado text,
+imagen text,
+contenido_body_wisi
 );
 
 LOAD DATA INFILE 'd:/pre.csv' INTO TABLE precio_carroceria FIELDS TERMINATED BY ';'  LINES TERMINATED BY '\n';

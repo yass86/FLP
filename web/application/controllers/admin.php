@@ -73,15 +73,12 @@ public function index() {
                 $var['titulo'] = "NUEVA SECCION";
                 $sec['contenido'] = $this->load->view('admin/seccion/nueva_seccion', $var, true);
                 $cont['main'] = $this->load->view('admin/elementos/main', $sec, true);
-            }//nueva pagina  
+            }
+            //nueva pagina  
             else if ($var == "nueva-pagina") {
                 $var = array();
-                $var['idioma'] = $this->getIdiomas(0,"idioma");
-                $var['nombre'] = "";
-                $var['slu'] = "";
-                $var['id'] = "0";
-                $var['titulo'] = "NUEVA PAGINA";
-                $sec['contenido'] = $this->load->view('admin/seccion/nueva_seccion', $var, true);
+                $var['idioma'] = $this->getIdiomasSigla(0,"edit-idioma");
+                $sec['contenido'] = $this->load->view('admin/pagina/nueva_pagina', $var, true);
                 $cont['main'] = $this->load->view('admin/elementos/main', $sec, true);
             }//nueva pagina
             else if ($var == "editar-seccion") {
@@ -95,8 +92,7 @@ public function index() {
                 $var['idioma'] = $this->getIdiomasSigla(0,"eliminar-idioma");
                 $sec['contenido'] = $this->load->view('admin/seccion/editar_seccion', $var, true);
                 $cont['main'] = $this->load->view('admin/elementos/main', $sec, true);
-            }//eliminar seccion 
-            
+            }//eliminar seccion             
             else if ($var == "tiny") {
                 $del['contenido'] = $this->load->view('admin/wisiwi/tiny',null,true);
                 $cont['main'] = $this->load->view('admin/elementos/main', $del, true);
