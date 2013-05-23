@@ -1,7 +1,12 @@
-<form id="new-form-pagina" method="post" action="<?php echo site_url('pagina/pagina/registrarPagina')?>"  enctype="multipart/form-data">
+<form id="pagina" method="post" action="<?php echo site_url('pagina/pagina/registrar_pagina')?>"  enctype="multipart/form-data">
+    
+    <div id="response">
+        
+    </div>
     <div class="form-item field-slu">
         <label for="">Slu<span>*</span></label>
         <input type="hidden" name="id" id="id_producto" value="<?php echo $id;?>">
+        <input type="hidden" name="seccion" id="id_seccion" value="<?php echo $seccion;?>">       
         <input type="hidden" name="seccion" id="id_seccion" value="<?php echo $seccion;?>">
         <input type="text" name="slu" id="slu" class="input" value="<?php echo $slu;?>">
     </div>
@@ -11,24 +16,27 @@
     </div>                             
     <div class="form-item field-tex-destacado-area">
         <label for="">Texto destacado<span>*</span></label>        
-        <textarea name="txt_destacado"><?php echo $txt_destacado;?></textarea>
+        <textarea name="txtdestacado"><?php echo $txt_destacado;?></textarea>
     </div>                                                     
     <div class="form-item field-cont-wisi">
         <label for="">Contenido<span>*</span></label>
-        <textarea name="contenido" id="contenido_wisi"></textarea>
+        <textarea name="contenido"><?php echo $txt_destacado;?></textarea>
     </div>                                    
     <div class="form-item btn-register-submit">
-        <div id="queue"></div>
-        <input id="file_upload" name="file_upload" type="file" multiple="true" value="<?php echo $imagen;?>">     
+        <label for="">Imagen<span>*</span></label>
+        <input id="file" name="userfile" type="file" value="<?php echo $imagen;?>">     
     </div>
     <div class="form-item btn-register-submit">
-        <input type="submit" class="" name="" id="submit-login" value="Registrar">
+        <input type="submit" class="" name="" id="submit-pagina" value="Registrar">
     </div>    
-    <div class="form-item btn-register-submit" id="reto">
-    </div>
+
 </form> 
 <script type="text/javascript">
-    
+   /* $('#submit-pagina').click(function(){
+        envioFormulario('pagina', 'response');
+        return false;
+    });*/
+   
     tinyMCE.init({
         // General options
         mode: "textareas",
@@ -52,7 +60,7 @@
         media_external_list_url: "js/media_list.js",
         // Replace values for the template plugin
         template_replace_values: {
-            username: "Some User",
+            username: "flp",
             staffid: "991234"
         }
     });

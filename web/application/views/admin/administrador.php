@@ -12,18 +12,15 @@
         <link type="text/css" rel="stylesheet" href="<?php echo site_url('theme/css/menu.css') ?>" media="all" />
         <link type="text/css" rel="stylesheet" href="<?php echo site_url('theme/css/normalize.css.css') ?>" media="all" />
         <link type="text/css" rel="stylesheet" href="<?php echo site_url('theme/css/stylesheet.css') ?>" media="all" />
-        <link type="text/css" rel="stylesheet" href="<?php echo site_url('uploadify/uploadify.css') ?>" media="all" />
+        
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="<?php echo site_url('theme/js/html5shiv-printshiv.js') ?>"></script>
-        <script type="text/javascript" src="<?php echo site_url('theme/js/jquery-1.7.2.min.js') ?>"></script>
-        <script type="text/javascript" src="<?php echo site_url('theme/js/css3-mediaqueries.js') ?>"></script>
-        <script type="text/javascript" src="<?php echo site_url('theme/js/jquery.cycle.lite.js') ?>"></script>
-        <script type="text/javascript" src="<?php echo site_url('theme/js/jquery.tinycarousel.min.js') ?>"></script>
+        <script type="text/javascript" src="<?php echo site_url('theme/js/jquery-1.7.2.min.js') ?>"></script>        
         <script type="text/javascript" src="<?php echo site_url('theme/js/custom.js') ?>"></script>
         <script type="text/javascript" src="<?php echo site_url('theme/js/utiles.js') ?>"></script>
         <script type="text/javascript" src="<?php echo site_url('theme/js/validacion.js') ?>"></script>
         <script type="text/javascript" src="<?php echo site_url('tiny_mce/tiny_mce.js') ?>"></script>        
-        <script type="text/javascript" src="<?php echo site_url('uploadify/jquery.uploadify.min.js') ?>"></script>        
+    
     </head>
     <body class="front no-sidebars" dir="<?php echo site_url(); ?>">
         <div id="page">

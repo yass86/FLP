@@ -6,9 +6,10 @@ class seccion_model extends CI_Model
          parent::_construct();
     }
     //obtenr menu de la base de datos 
-   function nueva_pagina($var="")
+   function nuevapagina($var="")
     {
-        
+         echo "<pre>".print_r($var,true)."</pre>";
+            exit;
         $echo = false;
         $sql="";
         if($var!="")

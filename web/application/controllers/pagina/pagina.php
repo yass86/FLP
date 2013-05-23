@@ -8,14 +8,14 @@ class Pagina extends CI_Controller {
         {
             echo $this->load->view("preload",null,true);
         }
-        function pagina_nueva($id_seccion="")
+        function pagina_nueva($seccion="")
         {
             $pagina ="";
-            if($id_seccion!="")
+            if($seccion!="")
             {
                 $dat = array();
                 $dat['id']=0;
-                $dat['seccion']=$id_seccion;
+                $dat['seccion']=$seccion;
                 $dat['slu']="";
                 $dat['titulo']="";
                 $dat['txt_destacado']="";
@@ -23,23 +23,25 @@ class Pagina extends CI_Controller {
                 $pagina = $this->load->view('admin/pagina/pagina',$dat,true);
             }
             echo $pagina;
-        }
-        
-        function registrarPagina()
+        }        
+        function registrar_pagina()
         {
-            if($this->seccionActiva())
+            
+           if($this->seccionActiva())
             {
                 $var = array();
                 $var['id'] = $this->input->post('id',true);
                 $var['seccion'] = $this->input->post('seccion',true);
                 $var['slu'] = $this->input->post('slu',true);
                 $var['titulo'] = $this->input->post('titulo',true);
-                $var['txt_destacado'] = $this->input->post('txt_destacado',true);
+                $var['txt_destacado'] = $this->input->post('txtdestacado',true);
                 $var['contenido'] = $this->input->post('contenido',true);
-                $var['file_upload'] = $this->input->post('file_upload',true);
+                $var['file_upload'] = $this->input->post('userfile',true);   
+              //  $var['txtcont'] = $this->input->post('txtcont',true);   
+               // $var['txtdest'] = $this->input->post('txtdest',true);   
                 
                 $this->load->model('pagina/pagina_model','pagina');
-                $inserto = $this->pagina->nueva_pagina($var);
+                $inserto = $this->pagina->nuevapagina($var);
                 if($inserto)
                     redirect ('admin');
                 else
@@ -49,15 +51,12 @@ class Pagina extends CI_Controller {
               redirect ('login');    
             }
         }
-
         //verificar que exista una seccion activa 
         private function seccionActiva()
         {
-            $activa = false;
-            
+            $activa = false;            
             if($this->session->userdata('id')!=null)
-                $activa=true;
-            
+                $activa=true;            
             return $activa;
         }
         function getIdiomas($seleccion="")

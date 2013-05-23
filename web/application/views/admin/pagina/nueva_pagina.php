@@ -8,8 +8,8 @@
         <label for="">Nombre Seccion<span></span></label>
         <div id="sec"><select name="seccion"></select></div>
     </div>  
-    <div class="form-item btn-register-submit">
-        <input type="submit" class="" name="" id="submit-login" value="Crear">
+    <div class="form-item btn-busqueda">
+        <input type="button" class="" name="" id="submit-login" value="Crear">
     </div>
 </div>
 <div id="zona-edit-seccion">
@@ -31,4 +31,5 @@
         var ids=$('#select-seccion').attr('value');
         getHtmlPlano("zona-edit-seccion","pagina/pagina/pagina_nueva/"+ids);
     });
+   
 </script>

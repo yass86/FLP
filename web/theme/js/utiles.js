@@ -1,3 +1,14 @@
+function envioFormulario(div,res)
+{
+    $.ajax({
+        url: $("#"+div).attr('action'),
+        type: $("#"+div).attr('method'),
+        data: $("#"+div).serialize(),
+        success: function(msg) {
+            $('#' + res).html(msg);
+        }
+    });
+}
 function getHtml(div, url)
 {
     $.ajax({
