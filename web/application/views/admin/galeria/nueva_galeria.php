@@ -1,30 +1,40 @@
-<form id="pagina" method="post" action="<?php echo site_url('pagina/pagina/registrar_pagina')?>"  enctype="multipart/form-data">
+<form id="pagina" method="post" action="<?php echo site_url('galeria/control_galeria/registrar_galeria')?>"  enctype="multipart/form-data">
     
     <div id="response">
         
     </div>
-    <div class="form-item field-slu">
-        <label for="">Slug<span>*</span></label>
-        <input type="hidden" name="id" id="id_producto" value="<?php echo $id;?>">
-        <input type="hidden" name="seccion" id="id_seccion" value="<?php echo $seccion;?>">              
-        <input type="text" name="slu" id="slu" class="input" value="<?php echo $slu;?>">
-    </div>
+    <div class="form-item field-tipo">
+        <label for="">Tipo Galeria<span></span></label>       
+        <span id="sec" class="wrapper-select">
+            <select name="tipo">
+                <option value="1">Fotos</option>
+                <option value="2">Archivos</option>
+            </select>
+        </span>            
+    </div>  
     <div class="form-item field-titulo">
         <label for="">Titulo<span>*</span></label>
+         <input type="hidden" name="id"  value="<?php echo $id;?>">
+        <input type="hidden" name="seccion" value="<?php echo $seccion?>">
         <input type="text" name="titulo" id="titulo" class="input" value="<?php echo $titulo;?>">
-    </div>                             
-    <div class="form-item field-tex-destacado-area">
-        <label for="">Texto destacado<span>*</span></label>        
-        <textarea name="txtdestacado"><?php echo $txt_destacado;?></textarea>
-    </div>                                                     
+    </div>                                                                                   
     <div class="form-item field-cont-wisi">
-        <label for="">Contenido<span>*</span></label>
-        <textarea name="contenido"><?php echo $txt_destacado;?></textarea>
-    </div>                                    
-    <div class="form-item btn-register-submit">
-        <label for="">Imagen<span>*</span></label>
-        <input id="file" name="archivo" type="file" value="<?php echo $imagen;?>">     
-    </div>
+        <label for="">Texto Pre-Galeria<span>*</span></label>
+        <textarea name="txtpregaleria"><?php echo $txtpregaleria;?></textarea>
+    </div> 
+    <div class="form-item field-cont-wisi">
+        <label for="">Texto Pos-Galeria<span>*</span></label>
+        <textarea name="txtposgaleria"><?php echo $txtposgaleria;?></textarea>
+    </div>     
+    <div class="form-item field-txt-boton">
+        <label for="">Texto Boton<span>*</span></label>
+        <input type="text" name="txtboton" id="titulo" class="input" value="<?php echo $txtboton;?>">
+    </div>  
+    <div class="form-item field-txt-boton">
+        <label for="">Url Boton<span>*</span></label>
+        <input type="text" name="urlboton" id="titulo" class="input" value="<?php echo $urlboton;?>">
+    </div>  
+    
     <div class="form-item btn-register-submit">
         <input type="submit" class="" name="" id="submit-pagina" value="Registrar">
     </div>    

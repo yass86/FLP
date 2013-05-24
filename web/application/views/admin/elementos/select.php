@@ -1,3 +1,4 @@
+<span class="wrapper-select">
 <select name="<?php echo $nombre?>" class="select-idioma">
     <?php 
     foreach ($lista as $value) {
@@ -10,3 +11,4 @@
     }
     ?>
 </select>
+</span>

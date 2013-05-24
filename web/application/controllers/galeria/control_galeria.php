@@ -1,6 +1,6 @@
 <?php
 
-class Pagina extends CI_Controller {
+class Control_galeria extends CI_Controller {
 
     public function index($idioma = "", $seccion = "", $pagina = "") {
         redirect();
@@ -10,38 +10,39 @@ class Pagina extends CI_Controller {
         echo $this->load->view("preload", null, true);
     }
 
-    function pagina_nueva($seccion = "") {
+    function galeria_nueva($seccion = "") {
         $pagina = "";
         if ($seccion != "") {
             $dat = array();
             $dat['id'] = 0;
             $dat['seccion'] = $seccion;
-            $dat['slu'] = "";
+            $dat['tipo'] = "";
             $dat['titulo'] = "";
-            $dat['txt_destacado'] = "";
-            $dat['imagen'] = "";
-            $pagina = $this->load->view('admin/pagina/pagina', $dat, true);
+            $dat['txtpregaleria'] = "";
+            $dat['txtposgaleria'] = "";
+            $dat['txtboton'] = "";
+            $dat['urlboton'] = "";
+           
+            $pagina = $this->load->view('admin/galeria/nueva_galeria', $dat, true);
         }
         echo $pagina;
     }
 
-    function registrar_pagina() {
+    function registrar_galeria() {
 
         if ($this->seccionActiva()) {
             $var = array();
             $var['id'] = $this->input->post('id', true);
             $var['seccion'] = $this->input->post('seccion', true);
-            $var['slu'] = $this->input->post('slu', true);
+            $var['tipo'] = $this->input->post('tipo', true);
             $var['titulo'] = $this->input->post('titulo', true);
-            $var['txt_destacado'] = $this->input->post('txtdestacado', true);
-            $var['contenido'] = $this->input->post('contenido', true);
-            $var['archivo'] = $this->almacenarFoto();
-            //  $var['txtcont'] = $this->input->post('txtcont',true);   
-            // $var['txtdest'] = $this->input->post('txtdest',true);   
-        //    echo "<pre>".print_r($var,true)."</pre>";
-           // exit;
-            $this->load->model('pagina/pagina_model', 'pagina');
-            $inserto = $this->pagina->nuevapagina($var);
+            $var['txtpregaleria'] = $this->input->post('txtpregaleria', true);
+            $var['txtposgaleria'] = $this->input->post('txtposgaleria', true);
+            $var['txtboton'] = $this->input->post('txtboton', true);
+            $var['urlboton'] = $this->input->post('urlboton', true);                        
+            
+            $this->load->model('galeria/galeria_model', 'galeria');
+            $inserto = $this->galeria->nueva_galeria($var);
             if ($inserto)
                 redirect('admin');
             else

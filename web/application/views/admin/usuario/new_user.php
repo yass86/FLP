@@ -18,13 +18,7 @@
     </div>
     <div class="form-item btn-register-submit">
         <input type="submit" class="" name="" id="submit-login" value="Registrar">
-    </div>
-    <div class="form-item btn-register-submit">
-        <div id="queue"></div>
-     <input id="file_upload" name="file_upload" type="file" multiple="true">
-     
-    </div>
-    
+    </div>      
     <div class="form-item btn-register-submit" id="reto">
     </div>
 </form> 

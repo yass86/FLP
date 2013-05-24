@@ -15,6 +15,16 @@ url varchar(500),
 tipo varchar(500),
 orden int
 );
+CREATE TABLE galeria(
+id_galeria int AUTO_INCREMENT PRIMARY KEY,
+id_seccion int,
+tipo int,
+titulo text,
+txtpregaleria blob,
+txtposgaleria blob,
+txtboton text,
+urlboton text
+);
 
 
 
@@ -64,6 +74,13 @@ titulo text,
 texto_destacado text,
 imagen text,
 contenido_body_wisi
+);
+CREATE TABLE bloque(
+id_bloque int AUTO_INCREMENT PRIMARY KEY,
+titulo text,
+contenido blob,
+txt_boton text,
+imagen text
 );
 
 LOAD DATA INFILE 'd:/pre.csv' INTO TABLE precio_carroceria FIELDS TERMINATED BY ';'  LINES TERMINATED BY '\n';

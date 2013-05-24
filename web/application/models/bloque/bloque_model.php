@@ -1,12 +1,12 @@
 <?php
-class pagina_model extends CI_Model 
+class bloque_model extends CI_Model 
 {
     function _construct()
     {
          parent::_construct();
     }
     //obtenr menu de la base de datos 
-   function nuevapagina($var="")
+   function nuevobloque($var="")
     {
          
         $echo = false;
@@ -16,15 +16,15 @@ class pagina_model extends CI_Model
             if($var['id']==0)
             {
                $att = array();
-               $att[0]=$var['seccion'];
-               $att[1]=$var['slu'];
-               $att[2]=$var['titulo'];
-               $att[3]=$var['txt_destacado'];               
-               $att[4]=$var['archivo'];
-               $att[5]=$var['contenido'];
-               
+               $att[0]=$var['seccion'];               
+               $att[1]=$var['titulo'];
+               $att[2]=$var['contenido'];
+               $att[3]=$var['txtboton'];               
+               $att[4]=$var['urlboton'];               
+               $att[5]=$var['archivo'];
+                              
                $var = $att;
-                $sql = "INSERT INTO pagina (id_seccion,slu,titulo,texto_destacado,imagen,contenido_body_wisi)
+                $sql = "INSERT INTO bloque (id_seccion,titulo,contenido,txt_boton,url_boton,imagen)
                 VALUES 
                 (?,?,?,?,?,?)";
             }

@@ -13,6 +13,10 @@ class Flp extends CI_Controller {
         {
             echo $this->load->view("preload",null,true);
         }
+        function upload()
+        {
+            echo $this->load->view('upload',null);
+        }
         function slu()
         {
             

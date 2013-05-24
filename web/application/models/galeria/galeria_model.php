@@ -1,14 +1,13 @@
 <?php
-class pagina_model extends CI_Model 
+class galeria_model extends CI_Model 
 {
     function _construct()
     {
          parent::_construct();
     }
     //obtenr menu de la base de datos 
-   function nuevapagina($var="")
-    {
-         
+   function nueva_galeria($var="")
+    {         
         $echo = false;
         $sql="";
         if($var!="")
@@ -16,17 +15,18 @@ class pagina_model extends CI_Model
             if($var['id']==0)
             {
                $att = array();
-               $att[0]=$var['seccion'];
-               $att[1]=$var['slu'];
-               $att[2]=$var['titulo'];
-               $att[3]=$var['txt_destacado'];               
-               $att[4]=$var['archivo'];
-               $att[5]=$var['contenido'];
-               
+               $att[0]=$var['seccion'];                              
+               $att[1]=$var['tipo'];                              
+               $att[2]=$var['titulo'];                              
+               $att[3]=$var['txtpregaleria'];                              
+               $att[4]=$var['txtposgaleria'];                              
+               $att[5]=$var['txtboton'];                              
+               $att[6]=$var['urlboton'];                              
+                              
                $var = $att;
-                $sql = "INSERT INTO pagina (id_seccion,slu,titulo,texto_destacado,imagen,contenido_body_wisi)
+                $sql = "INSERT INTO galeria (id_seccion,tipo,titulo,txtpregaleria,txtposgaleria,txtboton,urlboton)
                 VALUES 
-                (?,?,?,?,?,?)";
+                (?,?,?,?,?,?,?)";
             }
             else
             {

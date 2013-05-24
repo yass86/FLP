@@ -1,5 +1,5 @@
 <div id="editar-seccion">
-    <h2>NUEVA PAGINA</h2>
+    <h2>NUEVO BLOQUE</h2>
     <div class="form-item field-idioma">
         <label for="">Idioma<span></span></label>
         <span class="wrapper-select"> <?php echo $idioma;?></span>
@@ -29,7 +29,7 @@
     });
     $('#submit-login').click(function(){      
         var ids=$('#select-seccion').attr('value');
-        getHtmlPlano("zona-edit-seccion","pagina/pagina/pagina_nueva/"+ids);
+        getHtmlPlano("zona-edit-seccion","bloque/bloque/bloquenuevo/"+ids);
     });
    
 </script>

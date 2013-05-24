@@ -1,6 +1,6 @@
 <?php
 
-class Pagina extends CI_Controller {
+class Bloque extends CI_Controller {
 
     public function index($idioma = "", $seccion = "", $pagina = "") {
         redirect();
@@ -10,38 +10,36 @@ class Pagina extends CI_Controller {
         echo $this->load->view("preload", null, true);
     }
 
-    function pagina_nueva($seccion = "") {
+    function bloquenuevo($seccion = "") {
         $pagina = "";
         if ($seccion != "") {
             $dat = array();
             $dat['id'] = 0;
-            $dat['seccion'] = $seccion;
-            $dat['slu'] = "";
+            $dat['seccion'] = $seccion;            
             $dat['titulo'] = "";
-            $dat['txt_destacado'] = "";
+            $dat['contenido'] = "";
+            $dat['txtboton'] = "";
+            $dat['urlboton'] = "";
             $dat['imagen'] = "";
-            $pagina = $this->load->view('admin/pagina/pagina', $dat, true);
+            $pagina = $this->load->view('admin/bloque/nuevo_bloque', $dat, true);
         }
         echo $pagina;
     }
 
-    function registrar_pagina() {
+    function registrar_bloque() {
 
         if ($this->seccionActiva()) {
             $var = array();
             $var['id'] = $this->input->post('id', true);
-            $var['seccion'] = $this->input->post('seccion', true);
-            $var['slu'] = $this->input->post('slu', true);
+            $var['seccion'] = $this->input->post('seccion', true);            
             $var['titulo'] = $this->input->post('titulo', true);
-            $var['txt_destacado'] = $this->input->post('txtdestacado', true);
             $var['contenido'] = $this->input->post('contenido', true);
+            $var['txtboton'] = $this->input->post('txtboton', true);
+            $var['urlboton'] = $this->input->post('urlboton', true);            
             $var['archivo'] = $this->almacenarFoto();
-            //  $var['txtcont'] = $this->input->post('txtcont',true);   
-            // $var['txtdest'] = $this->input->post('txtdest',true);   
-        //    echo "<pre>".print_r($var,true)."</pre>";
-           // exit;
-            $this->load->model('pagina/pagina_model', 'pagina');
-            $inserto = $this->pagina->nuevapagina($var);
+ 
+            $this->load->model('bloque/bloque_model', 'bloque');
+            $inserto = $this->bloque->nuevobloque($var);
             if ($inserto)
                 redirect('admin');
             else
