@@ -107,13 +107,21 @@ public function index() {
                 $sec['contenido'] = $this->load->view('admin/seccion/editar_seccion', $var, true);
                 $cont['main'] = $this->load->view('admin/elementos/main', $sec, true);
             }//eliminar seccion             
+            else if ($var == "subir-imagen") {
+                $var = array();
+                $var['idioma'] = $this->getIdiomasSigla(0,"eliminar-idioma");
+                $var['galeria'] = $this->getGalerias();
+                $var['titulo'] ="";
+                $var['text_alt'] = "";
+                $var['files'] = "";
+                $var['upload'] = $this->load->view('admin/elementos/ajaxfileupload',null,true);
+                $sec['contenido'] = $this->load->view('admin/archivo/subir_archivo', $var, true);
+                $cont['main'] = $this->load->view('admin/elementos/main', $sec, true);
+            }//subir-imagen  
             else if ($var == "tiny") {
                 $del['contenido'] = $this->load->view('admin/wisiwi/tiny',null,true);
                 $cont['main'] = $this->load->view('admin/elementos/main', $del, true);
-            }//prueba_ck    
-            //impresion el template
-            ///  echo "<pre>".print_r($cont,true)."</pre>";
-            //   exit();
+            }
             echo $this->load->view('admin/administrador', $cont, true);
             //impresion el template
         } else {
@@ -121,6 +129,16 @@ public function index() {
         }
     }
 
+    
+    
+    function getGalerias()
+    {        
+            $this->load->model('galeria/galeria_model','gal');
+            $lista = $this->gal->get_galerias(); 
+            return $this->crea_select($lista, "select-galeria", "wrapper-select", "", "galeria");
+    }
+    
+    
     function error() {
         $lista['pf'] = "";
         $menu['mensaje'] = "";
@@ -150,6 +168,15 @@ public function index() {
         $lista['nombre'] = $nombre;
         return $this->load->view('admin/elementos/select_sigla', $lista, true);
     }
-
+    private function crea_select($lista,$id,$clase,$opcion,$nombre)
+    {
+        $dat['lista']=$lista;
+        $dat['id']=$id;
+        $dat['clase']=$clase;
+        $dat['opcion']=$opcion;
+        $dat['nombre']=$nombre;
+        return $this->load->view('admin/elementos/crear_select',$dat,true);
+    }
+    
 }
 

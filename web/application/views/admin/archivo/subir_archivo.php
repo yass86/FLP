@@ -1,45 +1,76 @@
-<form id="pagina" method="post" action="<?php echo site_url('galeria/control_galeria/registrar_galeria')?>"  enctype="multipart/form-data">    
-    <div id="response">
-        
-    </div>
-    <div class="form-item field-tipo">
-        <label for="">Tipo Galeria<span></span></label>       
-        <span id="sec" class="wrapper-select">
-            <select name="tipo">
-                <option value="1">Fotos</option>
-                <option value="2">Archivos</option>
-            </select>
-        </span>            
-    </div>  
-    <div class="form-item field-titulo">
+<form id="archivo" method="post" action="<?php echo site_url('archivo/control_archivo/subir_archivo')?>"  enctype="multipart/form-data">        
+    <div class="form-item field-idgaleria">
+        <label for="">Galeria<span>*</span></label>        
+        <span class="wrapper-select">
+            <?php echo $galeria?>
+        </span>
+    </div>                               
+    <div class="form-item field-idgaleria">
         <label for="">Titulo<span>*</span></label>
-         <input type="hidden" name="id"  value="<?php echo $id;?>">
-        <input type="hidden" name="seccion" value="<?php echo $seccion?>">
-        <input type="text" name="titulo" id="titulo" class="input" value="<?php echo $titulo;?>">
-    </div>                                                                                   
-    <div class="form-item field-cont-wisi">
-        <label for="">Texto Pre-Galeria<span>*</span></label>
-        <textarea name="txtpregaleria"><?php echo $txtpregaleria;?></textarea>
-    </div> 
-    <div class="form-item field-cont-wisi">
-        <label for="">Texto Pos-Galeria<span>*</span></label>
-        <textarea name="txtposgaleria"><?php echo $txtposgaleria;?></textarea>
-    </div>     
-    <div class="form-item field-txt-boton">
-        <label for="">Texto Boton<span>*</span></label>
-        <input type="text" name="txtboton" id="titulo" class="input" value="<?php echo $txtboton;?>">
-    </div>  
-    <div class="form-item field-txt-boton">
-        <label for="">Url Boton<span>*</span></label>
-        <input type="text" name="urlboton" id="titulo" class="input" value="<?php echo $urlboton;?>">
-    </div>  
-    
+        <input type="hidden" name="idgaleria" value="<?php echo $id?>">
+        <input type="text" name="titulo" id="titulo" value="<?php echo $titulo?>">
+    </div>                               
+    <div class="form-item field-idgaleria">
+        <label for="">Texto alt<span>*</span></label>        
+        <input type="text" name="text_alt" id="txtalt" value="<?php echo $text_alt?>">
+    </div>                                                 
+         
     <div class="form-item btn-register-submit">
-        <input type="submit" class="" name="" id="submit-pagina" value="Registrar">
-    </div>    
-
+        <input type="submit" class="" name="" id="submit-archivo" value="Registrar">
+    </div> 
+    <div id="up">
+     <?php echo $upload?>
+    </div>
+   
 </form> 
 <script type="text/javascript">  
+    function ajaxFileUpload()
+	{
+		$("#loading")
+		.ajaxStart(function(){
+			$(this).show();
+		})
+		.ajaxComplete(function(){
+			$(this).hide();
+		});
+
+		$.ajaxFileUpload
+		(
+			{
+				url:'doajaxfileupload.php',
+				secureuri:false,
+				fileElementId:'fileToUpload',
+				dataType: 'json',
+				data:{name:'logan', id:'id'},
+				success: function (data, status)
+				{
+					if(typeof(data.error) != 'undefined')
+					{
+						if(data.error != '')
+						{
+							alert(data.error);
+						}else
+						{
+							alert(data.msg);
+						}
+					}
+				},
+				error: function (data, status, e)
+				{
+					alert(e);
+				}
+			}
+		)
+		
+		return false;
+
+	}
+   
+    
+    $('#file').change(function(){
+        var txt = $("#file").attr('value');
+        $('#filem').attr('value', txt) ;
+    });
     tinyMCE.init({
         // General options
         mode: "textareas",

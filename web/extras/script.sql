@@ -26,6 +26,15 @@ txtboton text,
 urlboton text
 );
 
+CREATE TABLE archivo(
+id_archivo int AUTO_INCREMENT PRIMARY KEY,
+id_galeria int,
+ruta text,
+titulo text,
+text_alt text,
+contenido blob
+);
+
 
 
 INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('crear_usuario','Usuario Nuevo','admin/ir/new_user','usuarios',0);
@@ -45,6 +54,7 @@ INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('nueva_galeria','Ga
 INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('nueva_bloque','Bloque Nuevo','admin/ir/nueva-Bloque','Contenido',1);
 INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('nueva_baner','Baner Nuevo','admin/ir/nueva-Baner','Contenido',2);
 INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('nueva_contacto','Contacto Nuevo','admin/ir/nueva-Contactenos','Contenido',3);
+INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('archivo_nuevo','Subir imagenes galeria','admin/ir/subir-imagen','Contenido',4);
 
 CREATE TABLE reset(
 id int AUTO_INCREMENT PRIMARY KEY,

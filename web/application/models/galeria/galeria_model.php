@@ -54,6 +54,12 @@ class galeria_model extends CI_Model
         $lista = $this->db->query($sql)->result();
         return $lista;
     }
+    function get_galerias()
+    {
+        $sql = "select id_galeria as opcion,titulo as valor from galeria;";
+        $lista = $this->db->query($sql)->result();
+        return $lista;
+    }
     function buscarSeccion($id)
     {
         $sql="select * from seccion where id_seccion = $id";
