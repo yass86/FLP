@@ -12,7 +12,7 @@
         <link type="text/css" rel="stylesheet" href="<?php echo site_url('theme/css/menu.css') ?>" media="all" />
         <link type="text/css" rel="stylesheet" href="<?php echo site_url('theme/css/normalize.css.css') ?>" media="all" />
         <link type="text/css" rel="stylesheet" href="<?php echo site_url('theme/css/stylesheet.css') ?>" media="all" />
-        <link type="text/css" rel="stylesheet" href="<?php echo site_url('ajax_file/ajaxfileupload.css') ?>" media="all" />
+    
       
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="<?php echo site_url('theme/js/html5shiv-printshiv.js') ?>"></script>

@@ -14,6 +14,10 @@
         <label for="">Texto alt<span>*</span></label>        
         <input type="text" name="text_alt" id="txtalt" value="<?php echo $text_alt?>">
     </div>                                                 
+    <div class="form-item field-idgaleria">
+        <label for="">Archivo<span>*</span></label>        
+        <input type="file" name="archivo" id="file" value="<?php echo $file?>">
+    </div>                                                 
          
     <div class="form-item btn-register-submit">
         <input type="submit" class="" name="" id="submit-archivo" value="Registrar">

@@ -114,7 +114,9 @@ public function index() {
                 $var['titulo'] ="";
                 $var['text_alt'] = "";
                 $var['files'] = "";
-                $var['upload'] = $this->load->view('admin/elementos/ajaxfileupload',null,true);
+                $var['file'] = "";
+               // $var['upload'] = $this->load->view('admin/elementos/ajaxfileupload',null,true);
+                $var['upload'] = "";
                 $sec['contenido'] = $this->load->view('admin/archivo/subir_archivo', $var, true);
                 $cont['main'] = $this->load->view('admin/elementos/main', $sec, true);
             }//subir-imagen  

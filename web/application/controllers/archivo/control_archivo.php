@@ -27,23 +27,17 @@ class Pagina extends CI_Controller {
         echo $pagina;
     }
     
-    function registrar_pagina() {
+    function subir_archivo() {
 
         if ($this->seccionActiva()) {
             $var = array();
-            $var['id'] = $this->input->post('id', true);
-            $var['seccion'] = $this->input->post('seccion', true);
-            $var['slu'] = $this->input->post('slu', true);
+            $var['id'] = $this->input->post('galeria', true);
             $var['titulo'] = $this->input->post('titulo', true);
-            $var['txt_destacado'] = $this->input->post('txtdestacado', true);
-            $var['contenido'] = $this->input->post('contenido', true);
+            $var['text_alt'] = $this->input->post('text_alt', true);           
             $var['archivo'] = $this->almacenarFoto();
-            //  $var['txtcont'] = $this->input->post('txtcont',true);   
-            // $var['txtdest'] = $this->input->post('txtdest',true);   
-        //    echo "<pre>".print_r($var,true)."</pre>";
-           // exit;
-            $this->load->model('pagina/pagina_model', 'pagina');
-            $inserto = $this->pagina->nuevapagina($var);
+            
+            $this->load->model('archivo/archivo_model', 'archivo');
+            $inserto = $this->archivo->nuevofile($var);
             if ($inserto)
                 redirect('admin');
             else
