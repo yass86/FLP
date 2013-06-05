@@ -1,4 +1,4 @@
-<form id="archivo" method="post" action="<?php echo site_url('archivo/control_archivo/subir_archivo')?>"  enctype="multipart/form-data">        
+<form id="archivo" method="post" action="<?php echo site_url('archivo/control_archivo/subirarchivo')?>"  enctype="multipart/form-data">        
     <div class="form-item field-idgaleria">
         <label for="">Galeria<span>*</span></label>        
         <span class="wrapper-select">
@@ -7,7 +7,8 @@
     </div>                               
     <div class="form-item field-idgaleria">
         <label for="">Titulo<span>*</span></label>
-        <input type="hidden" name="idgaleria" value="<?php echo $id?>">
+        <input type="hidden" name="idimagen" id="idimagen" value="<?php echo $idimagen?>">
+        <input type="hidden" name="idgaleria" id="idgaleria" value="<?php echo $id?>">
         <input type="text" name="titulo" id="titulo" value="<?php echo $titulo?>">
     </div>                               
     <div class="form-item field-idgaleria">
@@ -17,8 +18,7 @@
     <div class="form-item field-idgaleria">
         <label for="">Archivo<span>*</span></label>        
         <input type="file" name="archivo" id="file" value="<?php echo $file?>">
-    </div>                                                 
-         
+    </div>                                                          
     <div class="form-item btn-register-submit">
         <input type="submit" class="" name="" id="submit-archivo" value="Registrar">
     </div> 
@@ -28,52 +28,13 @@
    
 </form> 
 <script type="text/javascript">  
-    function ajaxFileUpload()
-	{
-		$("#loading")
-		.ajaxStart(function(){
-			$(this).show();
-		})
-		.ajaxComplete(function(){
-			$(this).hide();
-		});
-
-		$.ajaxFileUpload
-		(
-			{
-				url:'doajaxfileupload.php',
-				secureuri:false,
-				fileElementId:'fileToUpload',
-				dataType: 'json',
-				data:{name:'logan', id:'id'},
-				success: function (data, status)
-				{
-					if(typeof(data.error) != 'undefined')
-					{
-						if(data.error != '')
-						{
-							alert(data.error);
-						}else
-						{
-							alert(data.msg);
-						}
-					}
-				},
-				error: function (data, status, e)
-				{
-					alert(e);
-				}
-			}
-		)
-		
-		return false;
-
-	}
-   
-    
-    $('#file').change(function(){
-        var txt = $("#file").attr('value');
-        $('#filem').attr('value', txt) ;
+       
+    $('#select-galeria').change(function(){
+        var txt = $(this).attr('value');
+        $('#idgaleria').attr('value', txt) ;
+    });
+    $('#titulo').click(function(){
+        $('#select-galeria').change();
     });
     tinyMCE.init({
         // General options

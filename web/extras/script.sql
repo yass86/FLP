@@ -34,6 +34,14 @@ titulo text,
 text_alt text,
 contenido blob
 );
+drop table imgen;
+CREATE TABLE imagen(
+id_imagen int AUTO_INCREMENT PRIMARY KEY,
+tipo int,
+ruta text,
+titulo text,
+text_alt text
+);
 
 
 

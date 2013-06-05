@@ -1,6 +1,6 @@
 <?php
 
-class Pagina extends CI_Controller {
+class Control_archivo extends CI_Controller {
 
     public function index($idioma = "", $seccion = "", $pagina = "") {
         redirect();
@@ -27,23 +27,25 @@ class Pagina extends CI_Controller {
         echo $pagina;
     }
     
-    function subir_archivo() {
-
+    function subirarchivo() 
+    {
         if ($this->seccionActiva()) {
             $var = array();
-            $var['id'] = $this->input->post('galeria', true);
+            $var['idimagen'] = $this->input->post('idimagen', true);
+            $var['id'] = $this->input->post('idgaleria', true);
+            $var['tipo'] = '1';
             $var['titulo'] = $this->input->post('titulo', true);
             $var['text_alt'] = $this->input->post('text_alt', true);           
-            $var['archivo'] = $this->almacenarFoto();
-            
+            $var['archivo'] = $this->almacenarFoto();           
             $this->load->model('archivo/archivo_model', 'archivo');
             $inserto = $this->archivo->nuevofile($var);
             if ($inserto)
-                redirect('admin');
+                redirect('admin/ir/subir-imagen');
             else
                 redirect('admin/error');
         }
-        else {
+        else 
+            {
             redirect('login');
         }
     }

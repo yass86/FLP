@@ -111,6 +111,8 @@ public function index() {
                 $var = array();
                 $var['idioma'] = $this->getIdiomasSigla(0,"eliminar-idioma");
                 $var['galeria'] = $this->getGalerias();
+                $var['id'] ="0";
+                $var['idimagen'] ="0";
                 $var['titulo'] ="";
                 $var['text_alt'] = "";
                 $var['files'] = "";

@@ -5,40 +5,32 @@ class archivo_model extends CI_Model
     {
          parent::_construct();
     }
-    //obtenr menu de la base de datos 
+    
    function nuevofile($var="")
     {
          
         $echo = false;
         $sql="";
+         
         if($var!="")
         {            
-            if($var['id']==0)
-            {
+            if($var['idimagen']==0)
+            { 
                $att = array();
-               $att[0]=$var['seccion'];
-               $att[1]=$var['slu'];
+               $att[0]=$var['id'];
+               $att[1]=$var['tipo'];
                $att[2]=$var['titulo'];
-               $att[3]=$var['txt_destacado'];               
+               $att[3]=$var['text_alt'];
                $att[4]=$var['archivo'];
-               $att[5]=$var['contenido'];
                
+              
+
                $var = $att;
-                $sql = "INSERT INTO pagina (id_seccion,slu,titulo,texto_destacado,imagen,contenido_body_wisi)
-                VALUES 
-                (?,?,?,?,?,?)";
+                $sql = "INSERT INTO imagen (id_galeria,tipo,titulo,text_alt,ruta)VALUES(?,?,?,?,?)";
             }
             else
             {
-                /*
-                $in[0]=$var['nombre'];
-                $in[1]=$var['idioma'];
-                $in[2]=$var['slu'];                
-                $sql = "Update seccion 
-                    set nombre = ?,
-                    idioma = ?,
-                    slu_seccion = ? where id_seccion = ".$var['id'];
-                $var=$in;*/
+               
             }         
              if($this->db->query($sql,$var))
              {
