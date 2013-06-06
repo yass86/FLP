@@ -22,9 +22,6 @@ class archivo_model extends CI_Model
                $att[2]=$var['titulo'];
                $att[3]=$var['text_alt'];
                $att[4]=$var['archivo'];
-               
-              
-
                $var = $att;
                 $sql = "INSERT INTO imagen (id_galeria,tipo,titulo,text_alt,ruta)VALUES(?,?,?,?,?)";
             }

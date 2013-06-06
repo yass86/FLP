@@ -88,11 +88,31 @@ public function index() {
                 $sec['contenido'] = $this->load->view('admin/bloque/bloque',$var, true);
                 $cont['main'] = $this->load->view('admin/elementos/main', $sec, true);
             }//bloque nuevo
+            //slide nuevo  
+            else if ($var == "nuevo-slide") {
+                $var = array();
+                $var['idioma'] = $this->getIdiomasSigla(0,"edit-idioma");
+                $sec['contenido'] = $this->load->view('admin/slide/slide',$var, true);                
+                $cont['main'] = $this->load->view('admin/elementos/main', $sec, true);
+            }//slide nuevo
+            //slide contenido
+            else if ($var == "nuevo-cotenido-slide") {
+                $var = array();
+               
+                $var['slide'] = $this->getslide();
+                $var['id_img'] = "";
+                $var['titulo'] = "";
+                $var['contenido'] = "";
+                $var['txtboton'] = "";
+                $var['urlboton'] = "";
+                $sec['contenido'] = $this->load->view('admin/slide/nuevo_contenido_slide',$var, true);                
+                $cont['main'] = $this->load->view('admin/elementos/main', $sec, true);
+            }//slide contenido
             //galeria nuevo  
             else if ($var == "nueva-galeria") {
                 $var = array();
                 $var['idioma'] = $this->getIdiomasSigla(0,"edit-idioma");
-                $sec['contenido'] = $this->load->view('admin/galeria/galeria',$var, true);
+                $sec['contenido'] = $this->load->view('admin/bloque/bloque',$var, true);
                 $cont['main'] = $this->load->view('admin/elementos/main', $sec, true);
             }//galeria nuevo
             else if ($var == "editar-seccion") {
@@ -140,6 +160,12 @@ public function index() {
             $this->load->model('galeria/galeria_model','gal');
             $lista = $this->gal->get_galerias(); 
             return $this->crea_select($lista, "select-galeria", "wrapper-select", "", "galeria");
+    }
+    function getslide()
+    {        
+            $this->load->model('slide/slide_model','gal');
+            $lista = $this->gal->getslide(); 
+            return $this->crea_select($lista, "select-slide", "wrapper-select", "", "slide");
     }
     
     

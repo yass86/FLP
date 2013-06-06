@@ -43,6 +43,24 @@ titulo text,
 text_alt text
 );
 
+drop table slide;
+CREATE TABLE slide(
+id_slide int AUTO_INCREMENT PRIMARY KEY,
+id_seccion int,
+nombre text
+);
+CREATE TABLE img_slide(
+id_img int AUTO_INCREMENT PRIMARY KEY,
+id_slide int,
+titulo text,
+contenido blob,
+imagen text,
+orden int,
+txtboton text,
+urlboton text
+);
+
+
 
 
 INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('crear_usuario','Usuario Nuevo','admin/ir/new_user','usuarios',0);
@@ -63,6 +81,8 @@ INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('nueva_bloque','Blo
 INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('nueva_baner','Baner Nuevo','admin/ir/nueva-Baner','Contenido',2);
 INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('nueva_contacto','Contacto Nuevo','admin/ir/nueva-Contactenos','Contenido',3);
 INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('archivo_nuevo','Subir imagenes galeria','admin/ir/subir-imagen','Contenido',4);
+INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('slide_nuevo','Nuevo Slide','admin/ir/nuevo-slide','Contenido',5);
+INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('contenido_slide','Cargar Contenido Slide','admin/ir/nuevo-cotenido-slide','Contenido',6);
 
 CREATE TABLE reset(
 id int AUTO_INCREMENT PRIMARY KEY,

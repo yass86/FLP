@@ -48,6 +48,18 @@ class seccion_model extends CI_Model
         $lista = $this->db->query($sql)->result();
         return $lista;
     }
+    function get_secciones($idioma)
+    {
+        if($idioma=='es')
+            $idioma=1;
+        else {
+                $idioma=2;
+        }
+        
+        $sql = "select * from seccion where idioma = $idioma";
+        $lista = $this->db->query($sql)->result();
+        return $lista;
+    }
     function buscarSeccion($id)
     {
         $sql="select * from seccion where id_seccion = $id";

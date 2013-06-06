@@ -13,25 +13,11 @@
                     <input class="submit" type="submit" value="Buscar" >
                   </form>
                 </div> <!--/.block -->
-                 <nav id="block-idioma-menu" class="block block-menu">
-                  <div class="content">
-                    <ul class="item-list"> 
-                      <li id ="menu-eng" class="first menu-item"><a class="active" href="/">ENG</a></li> 
-                      <li id ="menu-esp" class="last menu-item"><a href="/">ESP</a></li>
-                    </ul>  
-                   </div> <!-- /.content -->
-                </nav> <!--/.block -->
-                <nav id="block-main-menu" class="block block-menu">
-                  <div class="content">
-                    <ul class="main-menu item-list level-one"> 
-                      <li id ="menu-home" class="first menu-item"><a class="active" href="/">Inicio</a></li> 
-                      <li id ="menu-flp" class="menu-item"><a href="/">FLP INternacional</a></li>
-                      <li id ="menu-products" class="menu-item"><a href="/">Productos</a></li>
-                      <li id ="menu-services" class="last menu-item"><a href="/">Nuestros Servicios</a></li>
-                    </ul>  
-                   </div> <!-- /.content -->
-                </nav> <!--/.block -->
+                 
+               <?php echo $ido;?>
+               <?php echo $menu;?>
               </div> <!-- /.section-inner-->
           </div> <!--/.section --> 
         </div> <!-- /.section-wrapper-->
       </header> <!-- /#header -->  
+   
