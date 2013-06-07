@@ -59,6 +59,13 @@ orden int,
 txtboton text,
 urlboton text
 );
+CREATE TABLE img(
+id_img int AUTO_INCREMENT PRIMARY KEY,
+tipo int,
+titulo text,
+text_alt text,
+archivo text
+);
 
 
 
@@ -83,6 +90,7 @@ INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('nueva_contacto','C
 INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('archivo_nuevo','Subir imagenes galeria','admin/ir/subir-imagen','Contenido',4);
 INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('slide_nuevo','Nuevo Slide','admin/ir/nuevo-slide','Contenido',5);
 INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('contenido_slide','Cargar Contenido Slide','admin/ir/nuevo-cotenido-slide','Contenido',6);
+INSERT INTO menu (nombre,descripcion,url,tipo,orden) VALUES ('subir_imagen','Subir Imagen','admin/ir/subir-imagen-sola','Contenido',7);
 
 CREATE TABLE reset(
 id int AUTO_INCREMENT PRIMARY KEY,

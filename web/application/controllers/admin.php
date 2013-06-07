@@ -142,6 +142,20 @@ public function index() {
                 $sec['contenido'] = $this->load->view('admin/archivo/subir_archivo', $var, true);
                 $cont['main'] = $this->load->view('admin/elementos/main', $sec, true);
             }//subir-imagen  
+            //subir imagen sola
+            else if ($var == "subir-imagen-sola") {
+                $var = array();
+               
+                $var['id'] ="0";               
+                $var['titulo'] ="";
+                $var['text_alt'] = "";
+                
+                
+               // $var['upload'] = $this->load->view('admin/elementos/ajaxfileupload',null,true);
+                $var['upload'] = "";
+                $sec['contenido'] = $this->load->view('admin/archivo/subir_img_sola', $var, true);
+                $cont['main'] = $this->load->view('admin/elementos/main', $sec, true);
+            }//subir imagen sola
             else if ($var == "tiny") {
                 $del['contenido'] = $this->load->view('admin/wisiwi/tiny',null,true);
                 $cont['main'] = $this->load->view('admin/elementos/main', $del, true);

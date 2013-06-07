@@ -49,6 +49,28 @@ class Control_archivo extends CI_Controller {
             redirect('login');
         }
     }
+    function subirarchivo_img() 
+    {
+        if ($this->seccionActiva()) {
+            $var = array();
+           
+            $var['id'] = $this->input->post('idimagen', true);
+            $var['tipo'] = '1';
+            $var['titulo'] = $this->input->post('titulo', true);
+            $var['text_alt'] = $this->input->post('text_alt', true);           
+            $var['archivo'] = $this->almacenarFoto();           
+            $this->load->model('archivo/archivo_model', 'archivo');
+            $inserto = $this->archivo->nuevofile_img($var);
+            if ($inserto)
+                redirect('admin/ir/subir-imagen-sola');
+            else
+                redirect('admin/error');
+        }
+        else 
+            {
+            redirect('login');
+        }
+    }
 
    function almacenarFoto() 
    {       

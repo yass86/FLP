@@ -36,6 +36,36 @@ class archivo_model extends CI_Model
         }
         return $echo;
     } 
+   function nuevofile_img($var="")
+    {
+         
+        $echo = false;
+        $sql="";
+         
+        if($var!="")
+        {            
+            if($var['idimagen']==0)
+            { 
+               $att = array();
+              // $att[0]=$var['idimagen'];
+               $att[1]=$var['tipo'];
+               $att[2]=$var['titulo'];
+               $att[3]=$var['text_alt'];
+               $att[4]=$var['archivo'];
+               $var = $att;
+                $sql = "INSERT INTO img (tipo,titulo,text_alt,archivo)VALUES(?,?,?,?)";
+            }
+            else
+            {
+               
+            }         
+             if($this->db->query($sql,$var))
+             {
+                 $echo = true;
+             }
+        }
+        return $echo;
+    } 
     
     function get_seccion($id)
     {
