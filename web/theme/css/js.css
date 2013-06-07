@@ -1,4 +1,5 @@
-#block-carrousel  {
+#block-carrousel,
+#block-carrousel156x104   {
  height: 1%; 
  overflow:hidden; 
  position: relative; 
@@ -30,14 +31,16 @@
 #block-carrousel  .disable { 
   visibility: hidden; 
 }
-#block-carrousel  .overview { 
+#block-carrousel  .overview,
+#block-carrousel156x104 .overview,
+#block-carrousel132x173 .overview { 
   list-style: none; 
   position: absolute; 
   width: 240px; 
   left: 0 
   top: 0; 
 }
-#block-carrousel  .overview li{ 
+#block-carrousel  .overview li { 
   float: left; 
   margin: 0 20px 0 0; 
   padding: 1px; 
@@ -45,4 +48,5 @@
   border: 1px solid #dcdcdc; 
   width: 236px;
 }
-                    
+
+                

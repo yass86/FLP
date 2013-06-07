@@ -42,9 +42,29 @@ public function index($idioma="",$seccion="",$pagina="")
         
         function cargar_pagina($idioma="",$seccion="",$pagina="",$variable="")
         {
-            return $seccion;
+            $contenido = "";
+            $slu = "<a href=".site_url('flp/page/')."/$idioma/$seccion>$seccion</a>";
+            if($pagina!=""){
+                $slu.= "<a href=".site_url('flp/page/')."/$idioma/$seccion/$pagina>$pagina</a>";
+                if($variable!="")
+                    $slu.= "<a href=".site_url('flp/page/')."/$idioma/$seccion/$pagina/$variable>$variable</a>";
+            }
+            
+            
+           
+            if($seccion=="Inicio")
+            {
+                $contenido = $this->gethome($idioma, $seccion, $pagina, $variable,$slu);
+            }
+            return $contenido;
         }
         
+        function gethome($idioma="",$seccion="",$pagina="",$variable="",$slu)
+        {
+             $variables = array();
+            $variable['slu']=$slu;
+            return $this->load->view('front/page/home',$variable,true);
+        }        
         function precarga()
         {
             echo $this->load->view("preload",null,true);

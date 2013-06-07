@@ -18,8 +18,8 @@
   width: 940px;
 }
 .sidebar-first #content {
-  padding-left: 310px;
-  width: 600px;  /* LC width */
+    padding-left: 250px;
+    width: 710px;
 }
 .sidebarlast #content {
     width: 600px;
@@ -31,9 +31,10 @@
   width: 310px;
 }
 #sidebar-first {
-  float: left;
-  margin-right: -310px;
-  width: 310px;          /* LC width */
+    float: left;
+    margin-right: -250px;
+    padding-right: 30px;
+    width: 220px;
 }
 #sidebar-last {
     float: right;

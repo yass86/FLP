@@ -21,6 +21,7 @@
         <script type="text/javascript" src="<?php echo site_url('theme/js/custom.js') ?>"></script>
         <script type="text/javascript" src="<?php echo site_url('theme/js/utiles.js') ?>"></script>
         <script type="text/javascript" src="<?php echo site_url('theme/js/validacion.js') ?>"></script>
+        <script type="text/javascript" src="<?php echo site_url('theme/js/jquery.tinycarousel.min.js') ?>"></script>
         <script type="text/javascript" src="<?php echo site_url('tiny_mce/tiny_mce.js') ?>"></script>                
         <script type="text/javascript" src="<?php echo site_url('ajax_file/ajaxfileupload.js') ?>"></script>                
                        

@@ -29,7 +29,7 @@ ul, li {
 }
 a{
   font-size: 14px;
-  color: #1fb25a;
+  color: #00914E;
   text-decoration: underline;
 }
 a:hover {
@@ -84,8 +84,8 @@ select {
     font-size: 11px;
     font-style: italic;
     height: 27px;
-    padding: 4px 0 4px 4px;
-    width: 112%;
+    padding: 4% 0 4% 4%;
+    width: 117%;
    -webkit-appearance: none;
    -moz-appearance:    none;
    appearance:         none;
