@@ -52,9 +52,12 @@ public function index($idioma="",$seccion="",$pagina="")
             
             
            
-            if($seccion=="Inicio")
+            if($seccion=="inicio")
             {
                 $contenido = $this->gethome($idioma, $seccion, $pagina, $variable,$slu);
+            }
+            else{
+                $contenido = $seccion;
             }
             return $contenido;
         }

@@ -112,7 +112,7 @@ public function index() {
             else if ($var == "nueva-galeria") {
                 $var = array();
                 $var['idioma'] = $this->getIdiomasSigla(0,"edit-idioma");
-                $sec['contenido'] = $this->load->view('admin/bloque/bloque',$var, true);
+                $sec['contenido'] = $this->load->view('admin/galeria/galeria',$var, true);
                 $cont['main'] = $this->load->view('admin/elementos/main', $sec, true);
             }//galeria nuevo
             else if ($var == "editar-seccion") {
