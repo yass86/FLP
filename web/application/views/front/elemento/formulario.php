@@ -5,7 +5,7 @@
             <input type="text" value="Nombre Completo" class="form-text required">
         </div>
         <div class="form-item" id="webform-telefono">
-            <input type="text" value="TelÃ©fono" class="form-text required">
+            <input type="text" value="Teléfono" class="form-text required">
         </div>
         <div class="form-item" id="webform-pais">
             <span class="wrapper-select">
@@ -17,7 +17,7 @@
             </span>
         </div>
         <div class="form-item" id="webform-correo-electronico">
-            <input class="form-text required" type="email" value="Correo ElectÃ³nico">
+            <input class="form-text required" type="email" value="Correo Electrónico">
         </div>
 
         <div class="form-item" id="webform-mensaje">

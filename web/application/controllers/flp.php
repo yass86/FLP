@@ -71,9 +71,9 @@ public function index($idioma="",$seccion="",$pagina="")
         {
             $variable = array();
             $variable['slu']=$slu;
-            $lis['new_slide']=  $this->getSlide(5);
+            $lis['new_slide']=  $this->getSlide(3);
             $nave = array();
-            $lis['nav']=  $nave;
+            $lis['nav']= $this->getListaSlide(3);
             $variable['slide']=  $this->load->view('front/elemento/slide',$lis,true);
             $variable['carrucel']=  $this->load->view('front/elemento/carrucel',null,true);
             $variable['bloque1']=  $this->getBloqueleft(14);
@@ -96,9 +96,9 @@ public function index($idioma="",$seccion="",$pagina="")
         {
             $variable = array();
             $variable['slu']=$slu;
-            $lis['new_slide']=  $this->getSlide(5);
+            $lis['new_slide']=  $this->getSlide(3);
             $nave = array();
-            $lis['nav']=  $nave;
+            $lis['nav']= $this->getListaSlide(3);
             $variable['slide']=  $this->load->view('front/elemento/slide',$lis,true);
             $variable['carrucel']=  $this->load->view('front/elemento/carrucel',null,true);
             $variable['bloque1']=  $this->getBloque(7);
@@ -145,15 +145,28 @@ public function index($idioma="",$seccion="",$pagina="")
         function getSlide($idslide="")
         {
             $var = array();
-            if($idslide!="")
-            {
-                $var['titulo']="titulo";
-                $var['contenido']="contenido";
-                $var['url_boton']="url_boton";
-                $var['txt_boton']="txt_boton";
-                $var['imagen']="imagen.jpg";
-                $var = $this->load->view('front/elemento/new_slide',$var,true);
-            }
+            $this->load->model('slide/slide_model','slide');
+            $lista = $this->slide->getSlideid($idslide);
+             $var = array();
+             $slide = array();
+             $cont=1;
+            foreach ($lista as $value) {
+                $var['id']=$cont;
+                $var['titulo']=$value->titulo;
+                $var['contenido']=$value->contenido;
+                $var['url_boton']=$value->urlboton;
+                $var['txt_boton']=$value->txtboton;
+                $var['imagen']=$value->imagen;
+                $slide[$cont] = $this->load->view('front/elemento/new_slide',$var,true);            
+                $cont++;
+            }                            
+                
+            return $slide;
+        }
+        function getListaSlide($idslide="")
+        {
+             $this->load->model('slide/slide_model','slide');
+            $var = $this->slide->getListaSlideid($idslide);
             return $var;
         }
         function precarga()

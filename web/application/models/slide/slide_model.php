@@ -50,6 +50,20 @@ class slide_model extends CI_Model
         }
         return $echo;
     } 
+    function getSlideid($idslide="")
+    {
+          $sql="SELECT * FROM slide join img_slide on slide.id_slide = img_slide.id_slide where slide.id_slide = $idslide";
+        $lista = $this->db->query($sql)->result();
+       
+        return $lista;
+    }
+    function getListaSlideid($idslide="")
+    {
+        $sql="SELECT id_img FROM slide join img_slide on slide.id_slide = img_slide.id_slide where slide.id_slide = $idslide";
+        $lista = $this->db->query($sql)->result();
+       
+        return $lista;                
+    }
    function nuevo_contenido_slide($var="")
     {
          
