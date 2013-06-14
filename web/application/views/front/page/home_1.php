@@ -56,6 +56,9 @@
                         <li><img src="<?php echo site_url()."theme/images/lulo.png"?>" width="85px" height="77"><span></span></li>
                         <li><img src="<?php echo site_url()."theme/images/gualupa.png"?>" width="85px" height="77"><span></span></li>
                         <li><img src="<?php echo site_url()."theme/images/fresas.png"?>" width="85px" height="77"><span></span></li>
+                        
+                        
+
                     </ul>
                 </div> 
                 <a class="buttons next" href="#">right</a>

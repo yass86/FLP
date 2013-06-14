@@ -67,7 +67,14 @@ public function index($idioma="",$seccion="",$pagina="")
              $variables = array();
             $variable['slu']=$slu;
             return $this->load->view('front/page/home',$variable,true);
-        }        
+        }
+        function getBloque($idbloque="")
+        {
+            if($idbloque!="")
+            {
+                
+            }
+        }
         function precarga()
         {
             echo $this->load->view("preload",null,true);
