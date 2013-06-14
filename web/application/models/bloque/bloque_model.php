@@ -7,8 +7,7 @@ class bloque_model extends CI_Model
     }
     //obtenr menu de la base de datos 
    function nuevobloque($var="")
-    {
-         
+    {         
         $echo = false;
         $sql="";
         if($var!="")
@@ -53,6 +52,32 @@ class bloque_model extends CI_Model
         $sql = "select seccion.nombre,id_seccion from seccion join idioma on idioma=id_idioma where sigla = '$id'";
         $lista = $this->db->query($sql)->result();
         return $lista;
+    }
+    function getBloque($id)
+    {
+        $sql = "select * from bloque where id_bloque = $id";
+        $lista = $this->db->query($sql)->result();
+        
+        $var = array();
+            $var['id']="";
+            $var['titulo']="";
+            $var['imagen']="";
+            $var['contenido']="";
+            $var['url_boton']="";
+            $var['txt_boton']="";
+        foreach ($lista as $value) {
+            $var['id']=$value->id_bloque;
+            $var['titulo']=$value->titulo;
+            if($value->imagen!="no destino")
+                $var['imagen']=$value->imagen;
+            else
+                $var['imagen']=  "theme/images/default.jpg";
+            $var['contenido']=$value->contenido;
+            $var['url_boton']=$value->url_boton;
+            $var['txt_boton']=$value->txt_boton;
+        }
+        
+        return $var;
     }
     function buscarSeccion($id)
     {
