@@ -27,7 +27,7 @@
         <script type="text/javascript" src="<?php echo site_url('ajax_file/ajaxfileupload.js') ?>"></script>                
                        
   </head>
-  <body class="front no-sidebars" dir="<?php echo site_url();?>">
+  <body class="<?php echo $clase?>" dir="<?php echo site_url();?>">
       <div id="page">
       <?php echo $header; ?>
       <?php echo $preface; ?>

@@ -29,46 +29,56 @@ public function index($idioma="",$seccion="",$pagina="")
             else{
                  $va['idioma']="en";
             }
-            $va['contenido']=  $this->cargar_pagina($idioma,$seccion,$pagina,$variable);
+            $tmp =$this->cargar_pagina($idioma,$seccion,$pagina,$variable);
+            $va['contenido']= $tmp['pagina'] ;
             $var['menu']=  $this->getSecciones($idioma);
             $var['ido']=  $this->load->view('front/idioma',$va,true);   
             $cont['header']=  $this->load->view('front/header',$var,true);
             $cont['preface']=  $this->load->view('front/preface',null,true);
             $cont['main']=  $this->load->view('front/main',$va,true);
             $cont['footer']=  $this->load->view('front/footer',null,true);
-            
+            $cont['clase']=$tmp['clase'];
             echo $this->load->view('template',$cont,true);   
         }
         
         function cargar_pagina($idioma="",$seccion="",$pagina="",$variable="")
         {
-            $contenido = "";
+           
+            $contenido = array();
             $slu = "<a href=".site_url('flp/page/')."/$idioma/$seccion>$seccion</a>";
             if($pagina!=""){
-                $slu.= "<a href=".site_url('flp/page/')."/$idioma/$seccion/$pagina>$pagina</a>";
+                $slu.= "<span class='separator'> ›› </span><a href=".site_url('flp/page/')."/$idioma/$seccion/$pagina>$pagina</a>";
                 if($variable!="")
-                    $slu.= "<a href=".site_url('flp/page/')."/$idioma/$seccion/$pagina/$variable>$variable</a>";
+                    $slu.= "<span class='separator'> ›› </span><a href=".site_url('flp/page/')."/$idioma/$seccion/$pagina/$variable>$variable</a>";
             }
             if($seccion=="inicio")
             {
-                $contenido = $this->gethome($idioma, $seccion, $pagina, $variable,$slu);
+                $tmp= $this->gethome($idioma, $seccion, $pagina, $variable,$slu);
+                $contenido['pagina'] = $tmp['pagina'];
+                $contenido['clase']=$tmp['clase'];
             }
             else if($seccion=="flp-internacional")
             {
-                $contenido = $this->getflp($idioma, $seccion, $pagina, $variable,$slu);
+                $tmp = $this->getflp($idioma, $seccion, $pagina, $variable,$slu);
+                $contenido['pagina'] = $tmp['pagina'];
+                $contenido['clase']=$tmp['clase'];
             }
             else if($seccion=="nuestros-servicios")
             {
-                $contenido = $this->getNuestrosServicios($idioma, $seccion, $pagina, $variable,$slu);
+                $tmp = $this->getNuestrosServicios($idioma, $seccion, $pagina, $variable,$slu);
+                $contenido['pagina'] = $tmp['pagina'];
+                $contenido['clase']=$tmp['clase'];
             }
             else{
-                $contenido = $seccion;
+                $contenido['pagina'] = $seccion;
+                $contenido['clase']="front no-sidebars";
             }
             return $contenido;
         }
         
         function getflp($idioma="",$seccion="",$pagina="",$variables="",$slu)
         {
+            $vista =array();
             $variable = array();
             $variable['slu']=$slu;
             $lis['new_slide']=  $this->getSlide(3);
@@ -81,7 +91,31 @@ public function index($idioma="",$seccion="",$pagina="")
             $variable['bloque3']=  $this->getBloqueleft(15);            
             $variable['bloque4']=  $this->getBloqueleft(17);                        
             $variable['bloquetexto']=  $this->getBloquetexto(12);                        
-            return $this->load->view('front/page/flp_internacional',$variable,true);
+            $vista['clase']="front no-sidebars";
+            if($pagina=="")
+                $vista['pagina']=$this->load->view('front/page/flp_internacional',$variable,true);
+            else
+            {
+                if($pagina=="nuestras-operaciones")
+                {
+                    $variable['pagina']=  $this->getContenidoPagina(13);
+                     $vista['pagina']=$this->load->view('front/page/nuestras_operaciones',$variable,true);
+                     $vista['clase']="not-front sidebarlast";
+                }
+                else if($pagina=="compromiso-social")
+                {
+                    $variable['pagina']=  $this->getContenidoPagina(14);
+                     $vista['pagina']=$this->load->view('front/page/compromiso',$variable,true);
+                }
+                else
+                {
+                    $vista['pagina']=$seccion."/".$pagina;
+                    
+                }
+                
+            }
+            return $vista;
+            
         }
         function getNuestrosServicios($idioma="",$seccion="",$pagina="",$variables="",$slu)
         {
@@ -89,8 +123,11 @@ public function index($idioma="",$seccion="",$pagina="")
             $variable['slu']=$slu;                        
             $variable['bloque1']=  $this->getBloque(7);
             $variable['bloque2']=  $this->getBloque(8);
-            $variable['ubicar']=  $this->load->view('front/elemento/ubicar_oficina',null,true);            
-            return $this->load->view('front/page/nuestros_servicios',$variable,true);
+            $variable['ubicar']=  $this->load->view('front/elemento/ubicar_oficina',null,true);    
+            $vista=array();
+            $vista['pagina']=$this->load->view('front/page/nuestros_servicios',$variable,true);
+            $vista['clase']="front no-sidebars";
+            return $vista;
         }
         function gethome($idioma="",$seccion="",$pagina="",$variables="",$slu)
         {
@@ -107,7 +144,24 @@ public function index($idioma="",$seccion="",$pagina="")
             $variable['bloque4']=  $this->getBloque(16);
             $variable['bloque5']=  $this->getBloque(10);
             $variable['bloque6']=  $this->getBloque(11);
-            return $this->load->view('front/page/home',$variable,true);
+             $vista=array();
+            $vista['pagina']=$this->load->view('front/page/home',$variable,true);
+            $vista['clase']="front no-sidebars";
+            return $vista;
+        }
+        //funcion para cargar contenidos de tipo pagina
+        function getContenidoPagina($idpage="")
+        {
+            $this->load->model('pagina/pagina_model','pagina');
+            $lista = $this->pagina->get_pagina($idpage);
+            return $this->load->view('front/elemento/pagina',$lista,true);
+        }
+        function getGaleria($id_galeria="")
+        {
+            if($id_galeria!="")
+            {
+                    
+            }
         }
         function getBloque($idbloque="")
         {                   
@@ -177,6 +231,21 @@ public function index($idioma="",$seccion="",$pagina="")
         {
             $this->load->model('seccion/seccion_model','seccion');
             $lista['lista']=$this->seccion->get_secciones($idoma);
-            return $this->load->view('front/menu_un_nivel',$lista,true);
+            $lista['pagina']=$this->getsegundoNivelSecciones($lista['lista']);
+            return $this->load->view('front/menu_dos_niveles',$lista,true);
+        }
+        function getsegundoNivelSecciones($lista)
+        {
+            $paginas = array();
+             $this->load->model('seccion/seccion_model','seccion');
+            
+            foreach ($lista as $value) {
+                            
+                $paginas[$value->nombre]=  $this->seccion->get_subsecciones($value->id_seccion);
+                
+            }
+          //  echo "<pre>".print_r($paginas,true)."</pre>";
+            //exit;
+            return $paginas;
         }
 } 

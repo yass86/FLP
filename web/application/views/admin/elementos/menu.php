@@ -1,13 +1,12 @@
 <nav id="block-main-menu" class="block block-menu">
                   <div class="content">
-                      <ul class="main-menu items-list level-one"> 
-                      <?php                       
-                    //  echo "<pre>".print_r($lista,true)."</pre>";                   
+                      <ul class="main-menu item-list"> 
+                      <?php                                           
                       $con =1;
                       foreach ($lista as $key => $value){                          
                           ?>
-                          <li class="item-menu expanded"><a href="#" ><?php echo $key?></a>
-                           <ul class="main-menu items-list level-one"> 
+                          <li class="menu-item"><a href="#" ><?php echo $key?></a>
+                           <ul class=""> 
                            <?php foreach ($value as $val) 
                             { ?>
                                  <li id ="<?php echo $val->nombre;?>" class="item-list">

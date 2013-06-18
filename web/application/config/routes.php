@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "flp";
+$route['default_controller'] = "flp/page/es/inicio";
 //$route['flp/(:any)'] = 'flp/index/$1';
 $route['flp/ir'] = 'flp/index/ir';
 $route['404_override'] = '';

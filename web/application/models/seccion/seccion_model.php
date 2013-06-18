@@ -60,6 +60,14 @@ class seccion_model extends CI_Model
         $lista = $this->db->query($sql)->result();
         return $lista;
     }
+    function get_subsecciones($idseccion)
+    {
+                
+        $sql = "SELECT nombre,slu_seccion,slu,titulo FROM seccion join pagina on
+            seccion.id_seccion = pagina.id_seccion where seccion.id_seccion = $idseccion";
+        $lista = $this->db->query($sql)->result();
+        return $lista;
+    }
     function buscarSeccion($id)
     {
         $sql="select * from seccion where id_seccion = $id";

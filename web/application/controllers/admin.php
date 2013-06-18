@@ -6,10 +6,11 @@ public function index() {
             $menu['mensaje'] = "";
             $menu['contenido'] = "";
             $menu['menu'] = $this->cargarMenu();
+            $lista['menu']=$menu['menu'];
             $menu['usr'] = $this->load->view('admin/elementos/user', $menu, true);
             $cont['header'] = $this->load->view('admin/elementos/header', $menu, true);
             $cont['preface'] = $this->load->view('admin/elementos/preface', $lista, true);
-            $cont['main'] = $this->load->view('admin/elementos/main', null, true);
+            $cont['main'] = $this->load->view('admin/elementos/main', $lista, true);
             $cont['footer'] = $this->load->view('admin/elementos/footer', null, true);
             echo $this->load->view('admin/administrador', $cont, true);
         } else {

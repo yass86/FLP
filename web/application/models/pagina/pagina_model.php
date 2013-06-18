@@ -47,7 +47,25 @@ class pagina_model extends CI_Model
         }
         return $echo;
     } 
-    
+    function get_pagina($id_pagina="")
+    {
+        $atributos = array();
+        if($id_pagina!="")
+        {
+            $sql = "select * from pagina where id_pagina  = $id_pagina";
+            $lista = $this->db->query($sql)->result();
+            foreach ($lista as $value) 
+            {
+                $atributos['id']= $value->id_pagina;
+                $atributos['titulo']= $value->titulo;
+                $atributos['destacado']= $value->texto_destacado;
+                $atributos['contenido']= $value->contenido_body_wisi;
+                $atributos['imagen']= $value->imagen;
+            }
+            
+        }
+        return $atributos;
+    }
     function get_seccion($id)
     {
         $sql = "select seccion.nombre,id_seccion from seccion join idioma on idioma=id_idioma where sigla = '$id'";

@@ -4,7 +4,8 @@
               <div class="section-inner clearfix">
                 <div id="block-logo" class="block">
                   <div class="content">
-                    <img src="<?php echo site_url('theme/images/logo.png')?>">
+                      <a href="<?php echo site_url('flp/page/es/inicio')?>">  <img src="<?php echo site_url('theme/images/logo.png')?>"></a>
+                  
                   </div> <!-- /.content -->
                 </div><!-- /.block -->
                 <div id="block-buscar" class="block" >

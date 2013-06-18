@@ -16,8 +16,7 @@
           <div id="header-second" class="section-wrapper">
             <div class="section">
               <div class="section-inner clearfix">                   
-               <?php echo $usr;?>  
-                    <?php echo $menu;?>
+               <?php echo $usr;?>                    
               </div> <!-- /.section-inner-->
           </div> <!--/.section --> 
         </div> <!-- /.section-wrapper-->
