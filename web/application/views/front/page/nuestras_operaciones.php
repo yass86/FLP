@@ -18,11 +18,15 @@
                     <?php echo $pagina;?>
                 </section><!-- /.content-->
                 <section id="sidebar-last">
-                    <h2>FLP INTERNACIONAL</h2>
-                    <a href="">Historia</a>
-                    <a href="">Compromiso social</a>
+                    <h3>FLP INTERNACIONAL</h3>
+                    <a href="">Historia</a><br>
+                    <a href="">Compromiso social</a><br>
                     <a href="">Politica de calidad</a>
+                <section id="banners">
+                <?php echo $bloque1?>    
+                </section>
                 </section> <!-- sidebar-last -->
+               
             </div> <!-- /.section-inner-->
         </div> <!--/.section --> 
     </div> <!-- /.section-wrapper-->

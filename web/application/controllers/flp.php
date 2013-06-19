@@ -99,13 +99,33 @@ public function index($idioma="",$seccion="",$pagina="")
                 if($pagina=="nuestras-operaciones")
                 {
                     $variable['pagina']=  $this->getContenidoPagina(13);
+                    $variable['bloque1']=  $this->getBloquetexto(19);
                      $vista['pagina']=$this->load->view('front/page/nuestras_operaciones',$variable,true);
                      $vista['clase']="not-front sidebarlast";
                 }
                 else if($pagina=="compromiso-social")
                 {
                     $variable['pagina']=  $this->getContenidoPagina(14);
+                     $variable['bloque1']=  $this->getBloque(16);
+                     $variable['bloque2']=  $this->getBloque(7);
+                     $variable['bloque3']=  $this->getBloque(8);
+                    
                      $vista['pagina']=$this->load->view('front/page/compromiso',$variable,true);
+                      $vista['clase']="not-front sidebarlast";
+                }
+                else if($pagina=="politica-de-calidad")
+                {
+                    $variable['pagina']=  $this->getContenidoPagina(15);
+                     $variable['bloque1']=  $this->getBloque(16);
+                     $variable['bloque2']=  $this->getBloque(7);
+                     $variable['bloque3']=  $this->getBloque(8);
+                    
+                     $vista['pagina']=$this->load->view('front/page/compromiso',$variable,true);
+                      $vista['clase']="not-front sidebarlast";
+                }
+                else if($pagina=="flp-internacional")
+                {                                        
+                      $vista['pagina']=$this->load->view('front/page/flp_internacional',$variable,true);
                 }
                 else
                 {
