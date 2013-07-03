@@ -69,6 +69,12 @@ public function index($idioma="",$seccion="",$pagina="")
                 $contenido['pagina'] = $tmp['pagina'];
                 $contenido['clase']=$tmp['clase'];
             }
+            else if($seccion=="productos")
+            {
+                $tmp = $this->getProductos($idioma, $seccion, $pagina, $variable,$slu);
+                $contenido['pagina'] = $tmp['pagina'];
+                $contenido['clase']=$tmp['clase'];
+            }
             else{
                 $contenido['pagina'] = $seccion;
                 $contenido['clase']="front no-sidebars";
@@ -147,6 +153,18 @@ public function index($idioma="",$seccion="",$pagina="")
             $vista=array();
             $vista['pagina']=$this->load->view('front/page/nuestros_servicios',$variable,true);
             $vista['clase']="front no-sidebars";
+            return $vista;
+        }
+        function getProductos($idioma="",$seccion="",$pagina="",$variables="",$slu)
+        {
+            $variable = array();
+            $variable['slu']=$slu;                        
+            $this->load->model('producto/producto_model','producto');
+            $variable['producto'] = $this->producto->get_producto($pagina);
+            
+            $vista=array();
+            $vista['pagina']=$this->load->view('front/page/producto',$variable,true);
+            $vista['clase']="not-front sidebarlast";
             return $vista;
         }
         function gethome($idioma="",$seccion="",$pagina="",$variables="",$slu)

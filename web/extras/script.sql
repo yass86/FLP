@@ -128,6 +128,53 @@ contenido blob,
 txt_boton text,
 imagen text
 );
+CREATE TABLE producto(
+id_producto int AUTO_INCREMENT PRIMARY KEY,
+idioma varchar(5),
+tipo int,
+icono text,
+nombre varchar(200),
+nombre_alternativo text,
+nombre_botanico text,
+largo text,
+grosor text,
+peso text,
+dulce int,
+acido int,
+amargo int,
+salado int,
+tiempo_vida int,
+img_dis_inamduro text,
+txt_dis_inamduro text,
+img_dis_consumo text,
+txt_dis_consumo text,
+img_origen text,
+txt_origen text,
+);
+
+CREATE TABLE tabla_nutricional(
+id_nutricion int AUTO_INCREMENT PRIMARY KEY,
+calorias double,
+grace_crude double,
+agua double,
+proteinas double,
+fibra_cruda double,
+carbohidatros double,
+minerales double,
+calcio double,
+niacina double,
+vitaminac double,
+potacio double,
+hierro double,
+propiedades text
+);
+
+CREATE TABLE img_galeria_producto(
+id_img int AUTO_INCREMENT PRIMARY KEY,
+id_producto int,
+imagen text
+);
+
 
 LOAD DATA INFILE 'd:/pre.csv' INTO TABLE precio_carroceria FIELDS TERMINATED BY ';'  LINES TERMINATED BY '\n';
 SELECT * FROM `puc` where cuenta LIKE '110%'
