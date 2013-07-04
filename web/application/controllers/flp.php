@@ -161,7 +161,10 @@ public function index($idioma="",$seccion="",$pagina="")
             $variable['slu']=$slu;                        
             $this->load->model('producto/producto_model','producto');
             $variable['producto'] = $this->producto->get_producto($pagina);
-            
+            $variable['disponibilidad'] = $this->load->view('front/elemento/disponibilidad',null,true);
+             $nutricion['nutricion']=$this->producto->getNutricion($pagina);
+            $variable['nutricion'] = $this->load->view('front/elemento/nutricion',$nutricion,true);
+           
             $vista=array();
             $vista['pagina']=$this->load->view('front/page/producto',$variable,true);
             $vista['clase']="not-front sidebarlast";

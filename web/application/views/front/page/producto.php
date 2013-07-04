@@ -22,13 +22,13 @@
                             <a class="buttons prev" href="#">left</a>
                             <div id="slideshow" class="pics">
                               <div id="slide-1" class="item-slide">
-                                  <img src="<?php echo site_url().'files/slide.jpg'?>" width="485" height="245">      
+                                  <img src="<?php echo site_url().'files/maduro.jpg'?>" width="485" height="245">      
                               </div> <!-- item-slide -->
                               <div id="slide-2" class="item-slide">
-                                  <img src="<?php echo site_url().'files/slide.jpg'?>" width="485" height="245">      
+                                  <img src="<?php echo site_url().'files/maduro.jpg'?>" width="485" height="245">      
                               </div> <!-- item-slide -->
                               <div id="slide-3" class="item-slide">
-                                  <img src="<?php echo site_url().'files/slide.jpg'?>" width="485" height="245">     
+                                  <img src="<?php echo site_url().'files/maduro.jpg'?>" width="485" height="245">     
                               </div> <!-- item-slide -->
                             </div> 
                             <a class="buttons next" href="#">next</a>
@@ -41,7 +41,7 @@
                           <div class="detalle-product block">
                             <div class="tamaÃ±o-producto description-product">
                               <h3>Tamaño</h3>
-                              <img src="images/fresas.png" width="130" height="90">
+                              <img src="<?php echo site_url().'files/maduro.jpg'?>" width="130" height="90">
                               <p><label>Largo</label><span><?php echo $producto['largo']." CM"?></span></p>
                               <p><label>Grosor</label><span><?php echo $producto['grosor']." CM"?></span></p>
                               <p><label>Peso</label><span><?php echo $producto['peso']." Gr"?></span></p>
@@ -55,56 +55,13 @@
                             </div>
                             <div class="cultivos-producto description-product">
                               <h3>Cultivos Actuales</h3>
-                              <img src="<?php echo site_url().'files/fresas.png'?>" width="130" height="90">
+                              <img src="<?php echo site_url().'files/maduro.jpg'?>" width="130" height="90">
                               <p><?php echo $producto['txt_cultivo']?></p>
                             </div>
                           </div> <!-- detalle-product block -->
                         </div>
               <div class="info-disponibilidad-producto">
-                <h3>Disponibilidad</h3>
-                <div class="content">
-                  <table>
-                      <thead>
-                        <tr class="">
-                          <th><span>ENE</span></th>
-                          <th><span>FEB</span></th>
-                          <th><span>MAR</span></th>
-                          <th><span>ABR</span></th>
-                          <th><span>MAY</span></th>
-                          <th><span>JUN</span></th>
-                          <th><span>JUL</span></th>
-                          <th><span>AGO</span></th>
-                          <th><span>SEP</span></th>
-                          <th><span>OCT</span></th>
-                          <th><span>NOV</span></th>
-                          <th><span>DIC</span></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="odd">
-                          <td><span class="disp-orange disp-color"></span></td>
-                          <td><span class="disp-green disp-color"></span></td>
-                          <td><span class="disp-green disp-color"></span></td>
-                          <td><span class="disp-green disp-color"></span></td>
-                          <td><span class="disp-red disp-color"></span></td>
-                          <td><span class="disp-red disp-color"></span></td>
-                          <td><span class="disp-red disp-color"></span></td>
-                          <td><span class="disp-gray disp-color"></span></td>
-                          <td><span class="disp-gray disp-color"></span></td>
-                          <td><span class="disp-green disp-color"></span></td>
-                          <td><span class="disp-red disp-color"></span></td>
-                          <td><span class="disp-orange disp-color"></span></td>
-                        </tr>
-                        </tr>
-                      </tbody>
-                    </table> 
-                    <div class="descrip-disponibilidad">
-                            <div class="item-disp"><span class="disp-green disp-color"></span><span>ALTA Disponibilidad</span></div>
-                            <div class="item-disp"><span class="disp-orange disp-color"></span><span>MEDIA Disponibilidad</span></div>
-                            <div class="item-disp"><span class="disp-gray disp-color"></span><span>BAJA Disponibilidad</span></div>
-                            <div class="item-disp"><span class="disp-red disp-color"></span><span>NO Disponible</span></div>
-                   </div>                               
-                </div>
+                <?php echo $disponibilidad;?>
               </div> <!-- info-disponibilidad-producto -->
               <div class="info-consumo-producto">
                 <h3>Consumo del Producto</h3>
@@ -177,42 +134,18 @@
                   <div class="info-tiempo-producto">
                     <h2>Color interior y exterior</h2>
                     <h3>Estado Inmaduro</h3>
-                    <img src="images/slide.jpg" width="140" height="95"> 
-                    <img src="images/slide.jpg" width="140" height="95"> 
+                    <img src="<?php echo site_url().'files/maduro.jpg'?>" width="140" height="95"> 
+                    <img src="<?php echo site_url().'files/maduro.jpg'?>" width="140" height="95"> 
                     <p>Color verde</p>
                     <h3>Listo para Consumir</h3>
                     <div class="images-consumir">
-                      <img src="images/slide.jpg" width="140" height="95"> 
-                      <img src="images/slide.jpg" width="140" height="95">
+                      <img src="<?php echo site_url().'files/maduro.jpg'?>" width="140" height="95"> 
+                      <img src="<?php echo site_url().'files/maduro.jpg'?>" width="140" height="95">
                     </div> 
                     <p>Rosadas</p>
                   </div>
                   <div class="info-tabla-producto">
-                    <h2>Tabla Nutricional</h2>
-                    <h3>Aspecto nutricional por cada 100gr</h3>
-                    <p>(1 mano de 4 a 5 deditos aprox 450gr)</p>
-                    <table>
-                    <tr class="odd">
-                      <td>Calorias</td>
-                      <td>gr</td>
-                      <td>220</td>
-                      
-                    </tr>
-                    <tr class="even">
-                      <td>Agua</td>
-                      <td>gr</td>
-                      <td>400</td>
-                    </tr>
-                     <tr class="odd">
-                      <td>Ptroteinas</td>                      
-                      <td>20</td>
-                    </tr>
-                     <tr class="even">
-                      <td>Calcio</td>
-                      <td>gr</td>
-                      <td>400</td>
-                    </tr>
-                  </table>
+                   <?php echo $nutricion?>
                   </div>
                 </section> <!-- sidebar-last -->
               </div> <!-- /.section-inner-->

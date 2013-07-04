@@ -47,6 +47,44 @@ class producto_model extends CI_Model
         return $echo;
     } 
     
+    function getNutricion($idproducto="")
+    {       
+            $producto = $this->get_producto($idproducto);
+            $sql="select * from tabla_nutricional where id_producto = ".$producto['id_producto'];
+        
+        $lista = $this->db->query($sql)->result();    
+        $lis=array();
+        $lis['calorias']="";
+        $lis['grace_crude']="";
+        $lis['agua']="";
+        $lis['proteinas']="";
+        $lis['fibra_cruda']="";
+        $lis['carbohidatros']="";
+        $lis['minerales']="";
+        $lis['calcio']="";
+        $lis['niacina']="";
+        $lis['vitaminac']="";
+        $lis['potacio']="";
+        $lis['hierro']="";
+        $lis['propiedades']="";
+        foreach ($lista as $value) {
+            $lis['calorias']=$value->calorias;
+            $lis['grace_crude']=$value->grace_crude;
+            $lis['agua']=$value->agua;
+            $lis['proteinas']=$value->proteinas;
+            $lis['fibra_cruda']=$value->fibra_cruda;
+            $lis['carbohidatros']=$value->carbohidatros;
+            $lis['minerales']=$value->minerales;
+            $lis['calcio']=$value->calcio;
+            $lis['niacina']=$value->niacina;
+            $lis['vitaminac']=$value->vitaminac;
+            $lis['potacio']=$value->potacio;
+            $lis['hierro']=$value->hierro;
+            $lis['propiedades']=$value->propiedades;
+        }
+        return $lis;
+    }
+    
     function get_producto($nombre="")
     {
         if($nombre!="")
@@ -55,6 +93,7 @@ class producto_model extends CI_Model
             $sql = "select * from producto limit 1";
         $lista = $this->db->query($sql)->result();        
         $producto = array();
+        $producto['id_producto']="";
         $producto['icono']="";
         $producto['nombre']="";
         $producto['nombre_alternativo']="";
@@ -82,6 +121,7 @@ class producto_model extends CI_Model
         $producto['txt_origen']="";
         foreach ($lista as $key => $value) 
         {
+            $producto['id_producto']=$value->id_producto;
             $producto['icono']=$value->icono;
             $producto['nombre']=$value->nombre;
             $producto['nombre_alternativo']=$value->nombre_alternativo;
