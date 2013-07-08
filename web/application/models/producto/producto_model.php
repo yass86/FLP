@@ -84,6 +84,81 @@ class producto_model extends CI_Model
         }
         return $lis;
     }
+    function getConsumo($idproducto="")
+    {       
+            $producto = $this->get_producto($idproducto);
+            $sql="select * from producto_consumo where id_producto = ".$producto['id_producto'];
+        
+        $lista = $this->db->query($sql)->result();    
+        $lis=array();
+        $lis['titulo']="";
+        $lis['furta_fresca']="";
+        $lis['jugo_bebida']="";
+        $lis['helado']="";
+        $lis['congelada']="";
+        $lis['ensalada']="";
+        $lis['mezcla']="";
+      
+        foreach ($lista as $value) {
+            $lis['titulo']=$value->texto;
+            $lis['furta_fresca']=$value->furta_fresca;
+            $lis['jugo_bebida']=$value->jugo_bebida;
+            $lis['helado']=$value->helado;
+            $lis['congelada']=$value->congelada;
+            $lis['ensalada']=$value->ensalada;
+            $lis['mezcla']=$value->mezcla;
+        }
+        return $lis;
+    }
+    function getDisponibilidad($idproducto="")
+    {       
+            $producto = $this->get_producto($idproducto);
+            $sql="select * from producto_disponibilidad where id_producto = ".$producto['id_producto'];
+        
+        $lista = $this->db->query($sql)->result();    
+        $lis=array();
+        $lis['enero']="";
+        $lis['febrero']="";
+        $lis['marzo']="";
+        $lis['abril']="";
+        $lis['mayo']="";
+        $lis['junio']="";
+        $lis['julio']="";
+        $lis['agosto']="";
+        $lis['septiembre']="";
+        $lis['octubre']="";
+        $lis['noviembre']="";
+        $lis['diciembre']="";
+      
+        foreach ($lista as $value) {
+            $lis['enero']=$value->enero;
+            $lis['febrero']=$value->febrero;
+            $lis['marzo']=$value->marzo;
+            $lis['abril']=$value->abril;
+            $lis['mayo']=$value->mayo;
+            $lis['junio']=$value->junio;
+            $lis['julio']=$value->julio;
+            $lis['agosto']=$value->agosto;
+            $lis['septiembre']=$value->septiembre;
+            $lis['octubre']=$value->octubre;
+            $lis['noviembre']=$value->noviembre;
+            $lis['diciembre']=$value->diciembre;
+        }
+        
+        foreach ($lis as $key => $value) {
+            if($value==0)
+                $lis[$key]="disp-red disp-color";
+            else if($value==1)
+                $lis[$key]="disp-gray disp-color";
+            else if($value==2)
+                $lis[$key]="disp-orange disp-color";
+            else if($value==3)
+                $lis[$key]="disp-green disp-color";
+        }
+            
+
+        return $lis;
+    }
     
     function get_producto($nombre="")
     {

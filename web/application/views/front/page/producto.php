@@ -64,16 +64,7 @@
                 <?php echo $disponibilidad;?>
               </div> <!-- info-disponibilidad-producto -->
               <div class="info-consumo-producto">
-                <h3>Consumo del Producto</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales dui non felis scelerisque in lobortis</p>
-                <ul>
-                  <li><a href="">Fruta fresca</a></li>
-                  <li><a href="">Jugo-bebida</a></li>
-                  <li><a href="">Helado</a></li>
-                  <li><a href="">Congelada</a></li>
-                  <li><a href="">Ensalada</a></li>
-                  <li><a href="">Mezclada con otras</a></li>
-                </ul>
+                <?php echo $consumo?>
               </div> <!-- info-consumo-producto -->
               <div class="info-presentaciones-producto">
                 <h3>Presentaciones</h3>

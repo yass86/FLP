@@ -161,8 +161,12 @@ public function index($idioma="",$seccion="",$pagina="")
             $variable['slu']=$slu;                        
             $this->load->model('producto/producto_model','producto');
             $variable['producto'] = $this->producto->get_producto($pagina);
-            $variable['disponibilidad'] = $this->load->view('front/elemento/disponibilidad',null,true);
-             $nutricion['nutricion']=$this->producto->getNutricion($pagina);
+            
+            $nutricion['nutricion']=$this->producto->getNutricion($pagina);
+            $nutricion['consumo']=$this->producto->getConsumo($pagina);
+            $nutricion['disponibilidad']=$this->producto->getDisponibilidad($pagina);
+            $variable['disponibilidad'] = $this->load->view('front/elemento/disponibilidad',$nutricion,true);
+            $variable['consumo'] = $this->load->view('front/elemento/consumo',$nutricion,true);
             $variable['nutricion'] = $this->load->view('front/elemento/nutricion',$nutricion,true);
            
             $vista=array();

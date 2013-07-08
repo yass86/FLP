@@ -19,18 +19,19 @@
         </thead>
         <tbody>
             <tr class="odd">
-                <td><span class="disp-orange disp-color"></span></td>
-                <td><span class="disp-green disp-color"></span></td>
-                <td><span class="disp-green disp-color"></span></td>
-                <td><span class="disp-green disp-color"></span></td>
-                <td><span class="disp-red disp-color"></span></td>
-                <td><span class="disp-red disp-color"></span></td>
-                <td><span class="disp-red disp-color"></span></td>
-                <td><span class="disp-gray disp-color"></span></td>
-                <td><span class="disp-gray disp-color"></span></td>
-                <td><span class="disp-green disp-color"></span></td>
-                <td><span class="disp-red disp-color"></span></td>
-                <td><span class="disp-orange disp-color"></span></td>
+                <td><span class="<?php echo $disponibilidad['enero']?>"></span></td>
+                <td><span class="<?php echo $disponibilidad['febrero']?>"></span></td>
+                <td><span class="<?php echo $disponibilidad['marzo']?>"></span></td>
+                <td><span class="<?php echo $disponibilidad['abril']?>"></span></td>
+                <td><span class="<?php echo $disponibilidad['mayo']?>"></span></td>
+                <td><span class="<?php echo $disponibilidad['junio']?>"></span></td>
+                <td><span class="<?php echo $disponibilidad['julio']?>"></span></td>
+                <td><span class="<?php echo $disponibilidad['agosto']?>"></span></td>
+                <td><span class="<?php echo $disponibilidad['septiembre']?>"></span></td>
+                <td><span class="<?php echo $disponibilidad['octubre']?>"></span></td>
+                <td><span class="<?php echo $disponibilidad['noviembre']?>"></span></td>
+                <td><span class="<?php echo $disponibilidad['diciembre']?>"></span></td>
+                
             </tr>
             </tr>
         </tbody>

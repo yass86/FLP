@@ -175,6 +175,37 @@ id_producto int,
 imagen text
 );
 
+CREATE TABLE producto_disponibilidad(
+id_disponibilidad int AUTO_INCREMENT PRIMARY KEY,
+id_producto bigint,
+enero int,
+febrero int,
+marzo int,
+abril int,
+mayo int,
+junio int,
+julio int,
+agosto int,
+septiembre int,
+octubre int,
+noviembre int,
+diciembre int
+);
+0 no dispobible
+1 baja
+2 medi
+3 alta
+
+CREATE TABLE producto_consumo(
+id_consumo int AUTO_INCREMENT PRIMARY KEY,
+id_producto bigint,
+furta_fresca int,
+jugo_bebida int,
+helado int,
+congelada int,
+ensalada int,
+mezcla int
+);
 
 LOAD DATA INFILE 'd:/pre.csv' INTO TABLE precio_carroceria FIELDS TERMINATED BY ';'  LINES TERMINATED BY '\n';
 SELECT * FROM `puc` where cuenta LIKE '110%'
