@@ -40,17 +40,21 @@ public function index($idioma="",$seccion="",$pagina="")
             $cont['clase']=$tmp['clase'];
             echo $this->load->view('template',$cont,true);   
         }
-        
-        function cargar_pagina($idioma="",$seccion="",$pagina="",$variable="")
+        function crearSlu($idioma="",$seccion="",$pagina="",$variable="")
         {
-           
-            $contenido = array();
+             $contenido = array();
             $slu = "<a href=".site_url('flp/page/')."/$idioma/$seccion>$seccion</a>";
             if($pagina!=""){
                 $slu.= "<span class='separator'> ›› </span><a href=".site_url('flp/page/')."/$idioma/$seccion/$pagina>$pagina</a>";
                 if($variable!="")
                     $slu.= "<span class='separator'> ›› </span><a href=".site_url('flp/page/')."/$idioma/$seccion/$pagina/$variable>$variable</a>";
-            }
+            }   
+                return $slu;
+        }
+        function cargar_pagina($idioma="",$seccion="",$pagina="",$variable="")
+        {
+           
+            $slu = $this->crearSlu($idioma, $seccion, $pagina, $variable);
             if($seccion=="inicio")
             {
                 $tmp= $this->gethome($idioma, $seccion, $pagina, $variable,$slu);
@@ -158,10 +162,10 @@ public function index($idioma="",$seccion="",$pagina="")
         function getProductos($idioma="",$seccion="",$pagina="",$variables="",$slu)
         {
             $variable = array();
-            $variable['slu']=$slu;                        
+            
             $this->load->model('producto/producto_model','producto');
             $variable['producto'] = $this->producto->get_producto($pagina);
-            
+             $variable['slu']=  $this->crearSlu($idioma, $seccion,  $variable['producto']['tipo'], $variable['producto']['nombre']);
             $nutricion['nutricion']=$this->producto->getNutricion($pagina);
             $nutricion['consumo']=$this->producto->getConsumo($pagina);
             $nutricion['disponibilidad']=$this->producto->getDisponibilidad($pagina);

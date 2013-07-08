@@ -169,6 +169,7 @@ class producto_model extends CI_Model
         $lista = $this->db->query($sql)->result();        
         $producto = array();
         $producto['id_producto']="";
+        $producto['tipo']="";
         $producto['icono']="";
         $producto['nombre']="";
         $producto['nombre_alternativo']="";
@@ -197,6 +198,10 @@ class producto_model extends CI_Model
         foreach ($lista as $key => $value) 
         {
             $producto['id_producto']=$value->id_producto;
+            if($value->tipo==1)
+                $producto['tipo']="fruta";
+            else
+                $producto['tipo']="vegetal";
             $producto['icono']=$value->icono;
             $producto['nombre']=$value->nombre;
             $producto['nombre_alternativo']=$value->nombre_alternativo;
