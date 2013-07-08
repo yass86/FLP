@@ -116,9 +116,13 @@ public function index($idioma="",$seccion="",$pagina="")
                 else if($pagina=="compromiso-social")
                 {
                     $variable['pagina']=  $this->getContenidoPagina(14);
-                     $variable['bloque1']=  $this->getBloque(16);
-                     $variable['bloque2']=  $this->getBloque(7);
-                     $variable['bloque3']=  $this->getBloque(8);
+                     $variable['galeria1']=  $this->getGaleria(1);
+                     $variable['galeria2']=  $this->getGaleria(3);
+                     $variable['galeria3']=  $this->getGaleria(5);
+                     $variable['galeria4']=  $this->getGaleria(6);
+                     $variable['bloque1']=  $this->getBloque_siderbar_last(16);
+                     $variable['bloque2']=  $this->getBloque_siderbar_last(7);
+                     $variable['bloque3']=  $this->getBloque_siderbar_last(8);
                     
                      $vista['pagina']=$this->load->view('front/page/compromiso',$variable,true);
                       $vista['clase']="not-front sidebarlast";
@@ -207,10 +211,14 @@ public function index($idioma="",$seccion="",$pagina="")
         }
         function getGaleria($id_galeria="")
         {
+            $view="";
             if($id_galeria!="")
             {
-                    
+                 $this->load->model('galeria/galeria_model','galeria');
+                 $lista = $this->galeria->getGaleriasID($id_galeria);                
+                 $view = $this->load->view('front/elemento/galeria',$lista,true);
             }
+            return $view;
         }
         function getBloque($idbloque="")
         {                   
@@ -220,6 +228,17 @@ public function index($idioma="",$seccion="",$pagina="")
                 $this->load->model('bloque/bloque_model','bloque');
                 $var = $this->bloque->getBloque($idbloque);             
                 $vista = $this->load->view('front/elemento/bloque',$var,true);                
+            }            
+            return $vista;
+        }
+        function getBloque_siderbar_last($idbloque="")
+        {                   
+            $vista = "";
+            if($idbloque!="")
+            {
+                $this->load->model('bloque/bloque_model','bloque');
+                $var = $this->bloque->getBloque($idbloque);             
+                $vista = $this->load->view('front/elemento/bloque_sidebar_last',$var,true);                
             }            
             return $vista;
         }

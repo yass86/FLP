@@ -51,6 +51,7 @@
                               <p><label>Dulce</label><span><?php echo $producto['dulce']?></span></p>
                               <p><label>Acido</label><span><?php echo $producto['acido']?></span></p>
                               <p><label>Amargo</label><span><?php echo $producto['amargo']?></span></p>
+                              <p><label>Salado</label><span><?php echo $producto['salado']?></span></p>
                               <p><?php echo $producto['txt_sabor']?></p>
                             </div>
                             <div class="cultivos-producto description-product">

@@ -60,6 +60,35 @@ class galeria_model extends CI_Model
         $lista = $this->db->query($sql)->result();
         return $lista;
     }
+    function getGaleriasID($idGaleria="")
+    {
+        $lista = array();
+        $lista['id_galeria']="";
+        $lista['titulo']="";
+        $lista['txt_pre']="";
+        $lista['txt_pos']="";
+        if($idGaleria!="")
+        {
+            $sql = "select * from galeria where id_galeria = $idGaleria";
+            $lista = $this->db->query($sql)->result();
+            
+            foreach ($lista as $value) 
+            {
+                $lista['id_galeria']=$value->id_galeria;
+                $lista['titulo']=$value->titulo;
+                $lista['txt_pre']=$value->txtpregaleria;
+                $lista['txt_pos']=$value->txtposgaleria;                
+            }
+        }
+        
+        //obtener imagenes
+        $sql="select * from imagen where id_galeria = ".$lista['id_galeria'];
+        $fotos = $this->db->query($sql)->result();
+        
+        $lista['lista']=$fotos;
+        
+        return $lista;
+    }
     function buscarSeccion($id)
     {
         $sql="select * from seccion where id_seccion = $id";

@@ -22,9 +22,9 @@
                     <a href="">Historia</a><br>
                     <a href="">Compromiso social</a><br>
                     <a href="">Politica de calidad</a>
-                <section id="banners">
-                <?php echo $bloque1?>    
-                </section>
+                    <div id="banners" class="block">
+                     <?php echo $bloque1?>    
+                    </div>
                 </section> <!-- sidebar-last -->
                
             </div> <!-- /.section-inner-->

@@ -16,12 +16,13 @@
             <div class="section-inner clearfix">
                 <section id="content">
                     <?php echo $pagina;?>
+                    <?php echo $galeria1;?>
+                    <?php echo $galeria2;?>
+                    <?php echo $galeria3;?>
+                    <?php echo $galeria4;?>
                 </section><!-- /.content-->
                 <section id="sidebar-last">
-                    <h3>FLP INTERNACIONAL</h3>
-                    <a href="">Historia</a><br>
-                    <a href="">Compromiso social</a><br>
-                    <a href="">Politica de calidad</a>
+                    <?php echo "acordion internas";?>
                 <?php echo $bloque1?>    
                 <?php echo $bloque2?>    
                 <?php echo $bloque3?>  
