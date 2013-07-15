@@ -45,9 +45,17 @@ public function index($idioma="",$seccion="",$pagina="")
              $contenido = array();
             $slu = "<a href=".site_url('flp/page/')."/$idioma/$seccion>$seccion</a>";
             if($pagina!=""){
-                $slu.= "<span class='separator'> ›› </span><a href=".site_url('flp/page/')."/$idioma/$seccion/$pagina>$pagina</a>";
+                
                 if($variable!="")
-                    $slu.= "<span class='separator'> ›› </span><a href=".site_url('flp/page/')."/$idioma/$seccion/$pagina/$variable>$variable</a>";
+                    $slu.= "<span class='separator'> ›› </span><a href=".site_url('flp/page/')."/$idioma/$seccion/$pagina>$pagina</a>";
+                else
+                    $slu.= "<span class='separator'> ›› </span><span>$pagina</span>";
+                
+                if($variable!="")
+                {
+                    //$slu.= "<span class='separator'> ›› </span><a href=".site_url('flp/page/')."/$idioma/$seccion/$pagina/$variable>$variable</a>";
+                    $slu.= "<span class='separator'> ›› </span><span>$variable</span>";
+                }
             }   
                 return $slu;
         }
