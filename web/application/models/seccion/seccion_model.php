@@ -56,7 +56,7 @@ class seccion_model extends CI_Model
                 $idioma=2;
         }
         
-        $sql = "select * from seccion where idioma = $idioma";
+        $sql = "select * from seccion where idioma = $idioma order by id_seccion asc";
         $lista = $this->db->query($sql)->result();
         return $lista;
     }

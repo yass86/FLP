@@ -126,8 +126,8 @@ public function index($idioma="",$seccion="",$pagina="")
                     $variable['pagina']=  $this->getContenidoPagina(14);
                      $variable['galeria1']=  $this->getGaleria(1);
                      $variable['galeria2']=  $this->getGaleria(3);
-                     $variable['galeria3']=  $this->getGaleria(5);
-                     $variable['galeria4']=  $this->getGaleria(6);
+                     $variable['galeria3']=  $this->getGaleria(6);
+                     $variable['galeria4']=  $this->getGaleria(7);
                      $variable['bloque1']=  $this->getBloque_siderbar_last(16);
                      $variable['bloque2']=  $this->getBloque_siderbar_last(7);
                      $variable['bloque3']=  $this->getBloque_siderbar_last(8);
