@@ -16,6 +16,7 @@
             <div class="section">
                 <div class="section-inner clearfix">
                     <section id="content">
+                              <?php echo $pagina;?>
                         <section id="banners" class="servicios">
                               <?php echo $bloque1;?>
                               <?php echo $bloque2;?>
@@ -24,6 +25,7 @@
                     </section><!-- /.content-->
                     <section id="sidebar-last">
                         <?php echo $ubicar?>
+                        <?php echo $formulario?>
                     </section> <!-- sidebar-last -->
                 </div> <!-- /.section-inner-->
             </div> <!--/.section --> 

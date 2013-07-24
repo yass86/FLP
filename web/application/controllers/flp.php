@@ -43,8 +43,12 @@ public function index($idioma="",$seccion="",$pagina="")
         function crearSlu($idioma="",$seccion="",$pagina="",$variable="")
         {
              $contenido = array();
-            $slu = "<a href=".site_url('flp/page/')."/$idioma/$seccion>$seccion</a>";
+             
+            $slu = "<a href=".site_url().">flp</a>";
+            $slu .= "<span class='separator'> ›› </span>";
+           
             if($pagina!=""){
+                 $slu .= "<a href=".site_url('flp/page/')."/$idioma/$seccion>$seccion</a>";
                 
                 if($variable!="")
                     $slu.= "<span class='separator'> ›› </span><a href=".site_url('flp/page/')."/$idioma/$seccion/$pagina>$pagina</a>";
@@ -56,7 +60,11 @@ public function index($idioma="",$seccion="",$pagina="")
                     //$slu.= "<span class='separator'> ›› </span><a href=".site_url('flp/page/')."/$idioma/$seccion/$pagina/$variable>$variable</a>";
                     $slu.= "<span class='separator'> ›› </span><span>$variable</span>";
                 }
-            }   
+            }
+            else
+            {
+                 $slu.= "<span>$seccion</span>";
+            }
                 return $slu;
         }
         function cargar_pagina($idioma="",$seccion="",$pagina="",$variable="")
@@ -162,32 +170,92 @@ public function index($idioma="",$seccion="",$pagina="")
         function getNuestrosServicios($idioma="",$seccion="",$pagina="",$variables="",$slu)
         {
             $variable = array();
+            $variable['pagina']=  $this->getContenidoPagina(16);
             $variable['slu']=$slu;                        
             $variable['bloque1']=  $this->getBloque(7);
             $variable['bloque2']=  $this->getBloque(8);
             $variable['ubicar']=  $this->load->view('front/elemento/ubicar_oficina',null,true);    
+            $variable['formulario']=  $this->load->view('front/elemento/formulario',null,true);    
             $vista=array();
-            $vista['pagina']=$this->load->view('front/page/nuestros_servicios',$variable,true);
-            $vista['clase']="front no-sidebars";
+            if($pagina=="")
+            {
+                $vista['pagina']=$this->load->view('front/page/nuestros_servicios',$variable,true);
+                $vista['clase']="not-front sidebarlast";
+            }
+            else
+            {
+                if($pagina=="importar-frutas-tropicales-y-exoticas-en-europa")
+                {
+                    $vista['pagina']=$this->load->view('front/page/nuestros_servicios',$variable,true);
+                    $vista['clase']="not-front sidebarlast";
+                }
+                else if($pagina=="exportar-frutas-y-vegetales-desde-latinoamerica")
+                {
+                    $vista['pagina']=$this->load->view('front/page/nuestros_servicios',$variable,true);
+                    $vista['clase']="not-front sidebarlast";
+                }
+                else
+                {
+                    $vista['pagina']=$pagina;
+                    $vista['clase']="not-front sidebarlast";
+                }
+            }
             return $vista;
         }
         function getProductos($idioma="",$seccion="",$pagina="",$variables="",$slu)
         {
             $variable = array();
             
-            $this->load->model('producto/producto_model','producto');
-            $variable['producto'] = $this->producto->get_producto($pagina);
-             $variable['slu']=  $this->crearSlu($idioma, $seccion,  $variable['producto']['tipo'], $variable['producto']['nombre']);
-            $nutricion['nutricion']=$this->producto->getNutricion($pagina);
-            $nutricion['consumo']=$this->producto->getConsumo($pagina);
-            $nutricion['disponibilidad']=$this->producto->getDisponibilidad($pagina);
-            $variable['disponibilidad'] = $this->load->view('front/elemento/disponibilidad',$nutricion,true);
-            $variable['consumo'] = $this->load->view('front/elemento/consumo',$nutricion,true);
-            $variable['nutricion'] = $this->load->view('front/elemento/nutricion',$nutricion,true);
+           
            
             $vista=array();
-            $vista['pagina']=$this->load->view('front/page/producto',$variable,true);
-            $vista['clase']="not-front sidebarlast";
+            if($pagina=="")
+            {
+                  $vista['pagina']="Sin vista";
+                        $vista['clase']="not-front sidebarlast";
+            }
+            else
+            {
+                if($pagina=="fruta")
+                {
+                        $this->load->model('producto/producto_model','producto');
+                        $variable['producto'] = $this->producto->get_producto($variables);
+                        $variable['slu']=  $this->crearSlu($idioma, $seccion,  $variable['producto']['tipo'], $variable['producto']['nombre']);
+                        $nutricion['nutricion']=$this->producto->getNutricion($variables);
+                        $nutricion['consumo']=$this->producto->getConsumo($variables);
+                        $nutricion['disponibilidad']=$this->producto->getDisponibilidad($variables);
+                        $variable['disponibilidad'] = $this->load->view('front/elemento/disponibilidad',$nutricion,true);
+                        $variable['consumo'] = $this->load->view('front/elemento/consumo',$nutricion,true);
+                        $variable['nutricion'] = $this->load->view('front/elemento/nutricion',$nutricion,true);
+                        $vista['pagina']=$this->load->view('front/page/producto',$variable,true);
+                        $vista['clase']="not-front sidebarlast";
+                }
+                else if($pagina=="verdura")
+                {
+                        $this->load->model('producto/producto_model','producto');
+                        $variable['producto'] = $this->producto->get_producto($variables);
+                        $variable['slu']=  $this->crearSlu($idioma, $seccion,  $variable['producto']['tipo'], $variable['producto']['nombre']);
+                        $nutricion['nutricion']=$this->producto->getNutricion($variables);
+                        $nutricion['consumo']=$this->producto->getConsumo($variables);
+                        $nutricion['disponibilidad']=$this->producto->getDisponibilidad($variables);
+                        $variable['disponibilidad'] = $this->load->view('front/elemento/disponibilidad',$nutricion,true);
+                        $variable['consumo'] = $this->load->view('front/elemento/consumo',$nutricion,true);
+                        $variable['nutricion'] = $this->load->view('front/elemento/nutricion',$nutricion,true);
+                        $vista['pagina']=$this->load->view('front/page/producto',$variable,true);
+                        $vista['clase']="not-front sidebarlast";
+                }
+                else if($pagina=="disponibilidad")
+                {
+                    $vista['pagina']=$this->load->view('front/page/producto',$variable,true);
+                $vista['clase']="not-front sidebarlast";
+                    
+                }       
+                else
+                {
+                    $vista['pagina']=$pagina;
+                    $vista['clase']="not-front sidebarlast";
+                }
+            }
             return $vista;
         }
         function gethome($idioma="",$seccion="",$pagina="",$variables="",$slu)

@@ -229,7 +229,10 @@ class producto_model extends CI_Model
             $producto['txt_origen']=$value->txt_origen;
         }     
         
-        return $producto;
+        if($producto['id_producto']!="")
+            return $producto;
+        else
+            return $this->get_producto ();
     }
    
 }
