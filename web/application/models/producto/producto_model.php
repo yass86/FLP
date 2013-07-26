@@ -47,6 +47,17 @@ class producto_model extends CI_Model
         return $echo;
     } 
     
+    function getListaProductos($idioma)
+    {
+        $sql="SELECT * FROM producto where idioma = '$idioma'";                
+        $lista = $this->db->query($sql)->result(); 
+        
+        $var = array();
+        
+        
+        
+    }
+    
     function getNutricion($idproducto="")
     {       
             $producto = $this->get_producto($idproducto);

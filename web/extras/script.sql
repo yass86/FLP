@@ -207,5 +207,16 @@ ensalada int,
 mezcla int
 );
 
+CREATE TABLE operaciones_pais(
+id_operaciones int AUTO_INCREMENT PRIMARY KEY,
+seccion int,
+pais varchar,
+img text,
+titulo text,
+contenido text,
+txt_boton varchar(100),
+url_boton text
+);
+
 LOAD DATA INFILE 'd:/pre.csv' INTO TABLE precio_carroceria FIELDS TERMINATED BY ';'  LINES TERMINATED BY '\n';
 SELECT * FROM `puc` where cuenta LIKE '110%'

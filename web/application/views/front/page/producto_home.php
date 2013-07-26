@@ -19,32 +19,15 @@
                     <h1>Frutas y vegetales</h1> 
                       <section class="view-productos">   
                           <div class="view-content">
-                            <table>
-                              <tbody>
-                                  <?php 
-                                  $cont = 0;
-                                  $clase = 0;
-                                  foreach ($lista as $value) {
-                                      if($cont=0){
-                                          if(($clase%2)==0)
-                                          {
-                                            echo "<tr class='odd'>";                                                                                      
-                                          }
-                                            else
-                                                echo "<tr class='event'>";                                            
-                                          }
-                                          echo "<td><img src='images/fresas.png' width='190' height='130'><span>Fresa</span></td>";
-                                          if($cont=2)
-                                          {
-                                            echo " </tr>"; $cont=0; 
-                                            $clase++;
-                                          }
-                                           $cont++;
-                                  
-                                  }?>
-                              
-                              </tbody>
-                            </table>
+                            <?php 
+                            foreach ($productos as $value) {
+                                ?>
+                              <div class="item-list-productos-view">
+                                  <img src="<?php echo site_url('files')."/".$value['img']?>" width="190" height="130"><span><?php echo $value['nombre']?></span>
+                              </div>
+                              <?php
+                              }
+                            ?>                                
                            </div>
                         </section>
                      </div> 

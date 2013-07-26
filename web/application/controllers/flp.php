@@ -107,7 +107,7 @@ public function index($idioma="",$seccion="",$pagina="")
             $vista =array();
             $variable = array();
             $variable['slu']=$slu;
-            $lis['new_slide']=  $this->getSlide(3);
+            $lis['new_slide']=  $this->getSlideleft(3);
             $nave = array();
             $lis['nav']= $this->getListaSlide(3);
             $variable['slide']=  $this->load->view('front/elemento/slide',$lis,true);
@@ -126,6 +126,7 @@ public function index($idioma="",$seccion="",$pagina="")
                 {
                     $variable['pagina']=  $this->getContenidoPagina(13);
                     $variable['bloque1']=  $this->getBloquetexto(19);
+                    $variable['operaciones']= $this->getAcordeonOperaciones($idioma);
                      $vista['pagina']=$this->load->view('front/page/nuestras_operaciones',$variable,true);
                      $vista['clase']="not-front sidebarlast";
                 }
@@ -211,6 +212,8 @@ public function index($idioma="",$seccion="",$pagina="")
             $vista=array();
             if($pagina=="")
             {
+                 $this->load->model('producto/producto_model','producto');
+                 
                   $vista['pagina']="Sin vista";
                         $vista['clase']="not-front sidebarlast";
             }
@@ -285,6 +288,13 @@ public function index($idioma="",$seccion="",$pagina="")
             $lista = $this->pagina->get_pagina($idpage);
             return $this->load->view('front/elemento/pagina',$lista,true);
         }
+        function getAcordeonOperaciones($idioma)
+        {
+            $this->load->model('bloque/bloque_model','operacion');
+            $lista['lista']=  $this->operacion->get_operaciones($idioma);
+            $operaciones = $this->load->view('front/elemento/operaciones_por_pais',$lista,true);
+            return $operaciones;
+        }
         function getGaleria($id_galeria="")
         {
             $view="";
@@ -356,6 +366,27 @@ public function index($idioma="",$seccion="",$pagina="")
                 $var['txt_boton']=$value->txtboton;
                 $var['imagen']=$value->imagen;
                 $slide[$cont] = $this->load->view('front/elemento/new_slide',$var,true);            
+                $cont++;
+            }                            
+                
+            return $slide;
+        }
+        function getSlideleft($idslide="")
+        {
+            $var = array();
+            $this->load->model('slide/slide_model','slide');
+            $lista = $this->slide->getSlideid($idslide);
+             $var = array();
+             $slide = array();
+             $cont=1;
+            foreach ($lista as $value) {
+                $var['id']=$cont;
+                $var['titulo']=$value->titulo;
+                $var['contenido']=$value->contenido;
+                $var['url_boton']=$value->urlboton;
+                $var['txt_boton']=$value->txtboton;
+                $var['imagen']=$value->imagen;
+                $slide[$cont] = $this->load->view('front/elemento/new_slide_flp',$var,true);            
                 $cont++;
             }                            
                 

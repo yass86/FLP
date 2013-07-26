@@ -53,6 +53,17 @@ class bloque_model extends CI_Model
         $lista = $this->db->query($sql)->result();
         return $lista;
     }
+    function get_operaciones($idioma)
+    {
+        if($idioma=="es")
+            $idioma=1;
+        else
+            $idioma=2;
+        
+        $sql = "SELECT * FROM operaciones_pais join seccion on id_seccion = seccion where seccion.idioma = $idioma";
+        $lista = $this->db->query($sql)->result();
+        return $lista;
+    }
     function getBloque($id)
     {
         $sql = "select * from bloque where id_bloque = $id";

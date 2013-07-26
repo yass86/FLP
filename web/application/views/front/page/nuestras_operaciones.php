@@ -16,6 +16,7 @@
             <div class="section-inner clearfix">
                 <section id="content">
                     <?php echo $pagina;?>
+                    <?php echo $operaciones?>
                 </section><!-- /.content-->
                 <section id="sidebar-last">
                     <h3>FLP INTERNACIONAL</h3>
